@@ -1,3 +1,50 @@
-baseURL = "http://example.org/"
+baseURL = "https://rustledjimmies.net/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Rustled Jimmies"
+copyright = " 2016-2018 Sam Pratt"
+
+enableRobotsTXT = "true"
+enableEmoji = "true"
+
+[author]
+  name = "[Sam Pratt](https://twitter.com/_rustledjimmies)"
+  email = "spratt98@ymail.com"
+
+SectionPagesMenu = "main"
+
+[permalinks]
+  archive = "/:title/"
+
+[[menu.main]]
+  name = "Archive"
+  weight = -110
+  identifier = "archive"
+  url = "/archive/"
+
+[[menu.main]]
+  name = "About"
+  weight = -110
+  identifier = "about"
+  url = "/about/"
+
+[[menu.main]]
+  name = "Shop"
+  weight = -110
+  identifier = "shop"
+  url = "/shop/"
+
+[params.meta]
+  description = "A comic featuring plump lil dudes with cute butts."
+
+[params]
+  twitter = "_rustledjimmies"
+  instagram = "rustledjimmiescomic"
+  facebook = "rustledjimmiescomic"
+  patreon = "rustledjimmiescomic"
+  OpenLinksInNewWindow = true
+
+[outputs]
+  home = ["html", "rss"]
+
+[params.google.analytics]
+    trackerID = ""
