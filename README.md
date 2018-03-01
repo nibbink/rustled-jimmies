@@ -1,4 +1,4 @@
-#Rustled Jimmies
+# Rustled Jimmies
 A comic featuring plump lil dudes with cute butts crated by Sam Pratt.
 
 ## Colophon
