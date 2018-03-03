@@ -1,7 +1,7 @@
 <header>
   <!-- Logo Homepage Link -->
   <a class="logo" href="{{ .Site.BaseURL }}">
-    <img src={{ "/logo.svg" | relURL }} alt="">
+    <img src={{ "/logo.svg" | relURL }} alt="Rustled Jimmies logo">
   </a>
 
   <!-- Navbar -->
@@ -13,15 +13,23 @@
 
   <!-- Social Links -->
   <div class="social">
-     {{with .Site.Params.instagram}}
-    <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">Instagram</a>
-     {{end}}
-     {{with .Site.Params.twitter}}
-    <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">Twitter</a>
-     {{end}}
-    <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">RSS</a>
+    {{with .Site.Params.instagram}}
+    <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">
+      <img src={{ "/insta.svg" | relURL }} alt="Instagram icon">
+    </a>
+    {{end}}
+    {{with .Site.Params.twitter}}
+    <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">
+      <img src={{ "/twitter.svg" | relURL }} alt="Twitter icon">
+    </a>
+    {{end}}
+    <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">
+      <img src={{ "/rss.svg" | relURL }} alt="RSS icon">
+    </a>
     {{with .Site.Params.patreon}}
-    <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon">Patreon</a>
-     {{end}}
+    <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon">
+      <img src={{ "/patreon.svg" | relURL }} alt="Patreon icon">
+    </a>
+    {{end}}
   </div>
 </header>
