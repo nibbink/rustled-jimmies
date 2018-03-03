@@ -1,7 +1,12 @@
 <div class="page-nav">
   {{ if .Paginator.HasPrev }}
-  <a class="page-prev" href="{{ .Paginator.Prev.URL }}" title="Previous page">Recent</a>
-  {{ end }} {{ if .Paginator.HasNext }}
-  <a class="page-next" href="{{ .Paginator.Next.URL }}" title="Next page">Older</a>
+  <a class="page-prev" href="{{ .Paginator.Prev.URL }}" title="Previous page">
+    <img src={{ "/prev.svg" | relURL }} alt="">
+  </a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+  <a class="page-next" href="{{ .Paginator.Next.URL }}" title="Next page">
+    <img src={{ "/next.svg" | relURL }} alt="">
+  </a>
   {{ end }}
 </div>
