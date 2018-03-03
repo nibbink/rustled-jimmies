@@ -1,0 +1,20 @@
+<footer>
+  <div class="social">
+    {{with .Site.Params.instagram}}
+    <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">Instagram</a>
+    {{end}} {{with .Site.Params.twitter}}
+    <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">Twitter</a>
+    {{end}}
+    <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">RSS</a>
+  </div>
+
+  <div class="foot-nav">
+    <a class="nav-link" href='{{ .Site.BaseURL }}/about' title="About this site">{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
+    <a class="nav-link" href='{{ .Site.BaseURL }}/archive' title="All my comics">{{ with .Site.Params.archive }}{{ . }}{{ else }}Archive{{ end }}</a>
+    <a class="nav-link" href='{{ .Site.BaseURL }}/privacy' title="Privacy policy">{{ with .Site.Params.privacy }}{{ . }}{{ else }}Pravicy{{ end }}</a>
+  </div>
+
+  <div class="copy">&copy;{{ .Site.Copyright }}</div>
+</footer>
+</body>
+</html>

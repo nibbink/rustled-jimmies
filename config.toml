@@ -32,6 +32,12 @@ SectionPagesMenu = "main"
   identifier = "shop"
   url = "/shop/"
 
+[[menu.main]]
+  name = "Privacy"
+  weight = -110
+  identifier = "privacy"
+  url = "/privacy/"
+
 [params.meta]
   keywords = "comic, webcomic, rustled jimmies"
   description = "A comic featuring plump lil dudes with cute butts."
@@ -39,7 +45,6 @@ SectionPagesMenu = "main"
 [params]
   twitter = "_rustledjimmies"
   instagram = "rustledjimmiescomic"
-  facebook = "rustledjimmiescomic"
   patreon = "rustledjimmiescomic"
   OpenLinksInNewWindow = true
 
