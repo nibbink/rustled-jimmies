@@ -1,0 +1,8 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<div class="content-list">
+  {{ range .Data.Pages.GroupByDate "2006" }}
+  <div class="content-list-date">{{ .Key }}</div>
+  {{ range .Pages }} {{ .Render "li"}} {{ end }} {{ end }}
+</div>
+{{ partial "footer.html" . }}
