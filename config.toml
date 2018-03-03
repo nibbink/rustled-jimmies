@@ -1,4 +1,4 @@
-baseURL = "https://www.rustledjimmies.net/"
+baseURL = "https://www.rustledjimmies.net"
 languageCode = "en-us"
 title = "Rustled Jimmies"
 copyright = " 2016-2018 Sam Pratt"
@@ -34,6 +34,7 @@ SectionPagesMenu = "main"
   url = "/shop/"
 
 [params.meta]
+  keywords = "comic, webcomic, rustled jimmies"
   description = "A comic featuring plump lil dudes with cute butts."
 
 [params]
@@ -47,4 +48,4 @@ SectionPagesMenu = "main"
   home = ["html", "rss"]
 
 [params.google.analytics]
-    trackerID = ""
+    trackerID = "UA-69833960-2"
