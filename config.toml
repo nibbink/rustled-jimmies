@@ -7,8 +7,7 @@ enableRobotsTXT = "true"
 enableEmoji = "true"
 
 [author]
-  name = "[Sam Pratt](https://twitter.com/_rustledjimmies)"
-  email = "spratt98@ymail.com"
+  name = "[Sam Pratt](http://patreon.com/rustledjimmiescomic)"
 
 SectionPagesMenu = "main"
 
