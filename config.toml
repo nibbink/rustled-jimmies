@@ -36,7 +36,7 @@ SectionPagesMenu = "main"
   name = "Privacy"
   weight = -110
   identifier = "privacy"
-  url = "/privacy/"
+  url = "/shop/"
 
 [params.meta]
   keywords = "comic, webcomic, rustled jimmies"
