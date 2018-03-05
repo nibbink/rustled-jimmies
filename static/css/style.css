@@ -1,4 +1,10 @@
 /* BASE STYLING */
+@font-face {
+ font-family: "Sam";
+ src: url("/fonts/Sam.otf") format("opentype"),
+        url("/fonts/Sam.otf") format("opentype");
+}
+
 html {
   overflow: hidden;
   height: 100%;
@@ -13,11 +19,34 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: "Sam", sans-serif;
+  font: normal 24px Sam, sans-serif;
 }
 
-@font-face {
- font-family: "Sam";
- src: url("/fonts/Sam.otf") format("opentype"),
-        url("/fonts/Sam.otf") format("opentype");
+a {
+  text-decoration: none;
+  color: #2e2d2d;
+}
+
+
+/* NAVIGATION */
+.logo img {
+  width: 500px;
+  height: auto;
+}
+
+.social img {
+  width: 60px;
+  height: auto;
+}
+
+.nav-item {
+  font-size: 30px;
+}
+
+.nav-link {
+  font-size: 26px;
+}
+
+.copy {
+  font-size: 20px;
 }
