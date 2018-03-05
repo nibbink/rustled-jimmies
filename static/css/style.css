@@ -1,0 +1,23 @@
+/* BASE STYLING */
+html {
+  overflow: hidden;
+  height: 100%;
+  width: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  height: 100%;
+  width: auto;
+  overflow: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Sam", sans-serif;
+}
+
+@font-face {
+ font-family: "Sam";
+ src: url("/fonts/Sam.otf") format("opentype"),
+        url("/fonts/Sam.otf") format("opentype");
+}
