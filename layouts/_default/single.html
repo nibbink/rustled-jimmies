@@ -3,10 +3,5 @@
 <article class="post">
   <h2 class="title">{{ .Title }}</h2>
   <div class="content">{{ .Content }}</div>
-  <div class="meta">
-    {{ range .Params.tags }}
-      <a class="tag" href="/tags/{{ . | urlize }}">#{{.}}</a>
-    {{ end }}
-  </div>
 </article>
 {{ partial "footer.html" . }}

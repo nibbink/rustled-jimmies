@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 <main>
-  {{ $paginator := .Paginate (where .Data.Pages "Type" "archive") 1 }} {{ range $paginator.Pages }} {{ .Render "summary" }}
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "comics") 1 }} {{ range $paginator.Pages }} {{ .Render "summary" }}
   {{ end }} {{ partial "paginator.html" . }}
 </main>
 
