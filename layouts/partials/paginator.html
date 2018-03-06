@@ -1,12 +1,20 @@
 <div class="page-nav">
-  {{ if .Paginator.HasPrev }}
-  <a class="page-prev" href="{{ .Paginator.Prev.URL }}" title="Previous page">
-    <img src={{ "/prev.svg" | relURL }} alt="">
+  {{ if .Paginator.Last }}
+  <a class="page-last" href="{{ .Paginator.Last.URL }}" title="Last page">
+    <img src={{ "/latest.svg" | relURL }} alt="">
   </a>
   {{ end }}
+
   {{ if .Paginator.HasNext }}
   <a class="page-next" href="{{ .Paginator.Next.URL }}" title="Next page">
     <img src={{ "/next.svg" | relURL }} alt="">
   </a>
   {{ end }}
+
+  {{ if .Paginator.HasPrev }}
+  <a class="page-prev" href="{{ .Paginator.Prev.URL }}" title="Previous page">
+    <img src={{ "/prev.svg" | relURL }} alt="">
+  </a>
+  {{ end }}
+
 </div>
