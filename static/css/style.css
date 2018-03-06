@@ -27,6 +27,11 @@ a {
   color: #2e2d2d;
 }
 
+figure img {
+  width: 600px;
+  height: auto;
+}
+
 
 /* NAVIGATION */
 .logo img {
@@ -49,4 +54,9 @@ a {
 
 .copy {
   font-size: 20px;
+}
+
+.page-nav img {
+  width: 25px;
+  height: auto;
 }

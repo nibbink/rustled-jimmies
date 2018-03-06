@@ -4,10 +4,8 @@
   <h2 class="title">{{ .Title }}</h2>
   <div class="content">{{ .Content }}</div>
   <div class="meta">
-    {{ if .Params.showthedate }}
-    <div class="date">{{ .Date.Format "Jan 2, 2006" }}</div>
-    {{ end }} {{ range .Params.tags }}
-    <a class="tag" href="/tags/{{ . | urlize }}">#{{.}}</a>
+    {{ range .Params.tags }}
+      <a class="tag" href="/tags/{{ . | urlize }}">#{{.}}</a>
     {{ end }}
   </div>
 </article>
