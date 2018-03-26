@@ -56,7 +56,20 @@ figure img {
   font-size: 20px;
 }
 
+.page-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
 .page-nav img {
   width: auto;
   height: 45px;
+  padding: 0 20px;
+}
+
+.disabled {
+  visibility: hidden;
 }
