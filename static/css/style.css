@@ -45,6 +45,7 @@ figure img {
   height: 110px;
 }
 
+.nav-bar,
 .page-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +60,7 @@ figure img {
 }
 
 .social img {
-  height: 60px;
+  height: 40px;
 }
 
 /* STYLING */

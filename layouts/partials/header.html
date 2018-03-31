@@ -4,32 +4,34 @@
     <img src={{ "/logo.svg" | relURL }} alt="Rustled Jimmies logo">
   </a>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a class="nav-item" href='{{ .Site.BaseURL }}/archive' title="All my comics">{{ with .Site.Params.archive }}{{ . }}{{ else }}Archive{{ end }}</a>
-    <a class="nav-item" href='{{ .Site.BaseURL }}/about' title="About this site">{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
-    <a class="nav-item" href='{{ .Site.BaseURL }}/shop' title="Shop our latest merch">{{ with .Site.Params.about }}{{ . }}{{ else }}Shop{{ end }}</a>
-  </nav>
-
-  <!-- Social Links -->
-  <div class="social">
-    {{with .Site.Params.instagram}}
-    <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">
-      <img src={{ "/insta.svg" | relURL }} alt="Instagram icon">
-    </a>
-    {{end}}
-    {{with .Site.Params.twitter}}
-    <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">
-      <img src={{ "/twitter.svg" | relURL }} alt="Twitter icon">
-    </a>
-    {{end}}
-    <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">
-      <img src={{ "/rss.svg" | relURL }} alt="RSS icon">
-    </a>
-    {{with .Site.Params.patreon}}
-    <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon">
-      <img src={{ "/patreon.svg" | relURL }} alt="Patreon icon">
-    </a>
-    {{end}}
+  <div class="nav-bar">
+    <!-- Navbar -->
+    <nav class="nav-menu">
+      <a class="nav-item" href="{{ .Site.BaseURL }}/archive">Archive</a>
+      <a class="nav-item" href="{{ .Site.BaseURL }}/about">About</a>
+      <a class="nav-item" href="{{ .Site.BaseURL }}/shop">Shop</a>
+    </nav>
+  
+    <!-- Social Links -->
+    <div class="social">
+      {{with .Site.Params.instagram}}
+      <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank">
+        <img src={{ "/insta.svg" | relURL }} alt="Instagram icon">
+      </a>
+      {{end}}
+      {{with .Site.Params.twitter}}
+      <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank">
+        <img src={{ "/twitter.svg" | relURL }} alt="Twitter icon">
+      </a>
+      {{end}}
+      <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank">
+        <img src={{ "/rss.svg" | relURL }} alt="RSS icon">
+      </a>
+      {{with .Site.Params.patreon}}
+      <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank">
+        <img src={{ "/patreon.svg" | relURL }} alt="Patreon icon">
+      </a>
+      {{end}}
+    </div>
   </div>
 </header>
