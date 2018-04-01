@@ -1,8 +1,13 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
-<article class="post">
-  <h2 class="title">{{ .Title }}</h2>
-  <div class="content">{{ .Content }}</div>
-</article>
+<main>
+  <img src={{ "/ad.png" | relURL }} alt="" class="ad">
+  <article class="post">
+    <h2 class="title">{{ .Title }}</h2>
+    <div class="content">{{ .Content }}</div>
+  </article>
+  <img src={{ "/ad.png" | relURL }} alt="" class="ad">
+</main>
+
 {{ partial "paginator.html" . }}
 {{ partial "footer.html" . }}

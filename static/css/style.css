@@ -18,9 +18,12 @@ html {
 
 body {
   font: normal 24px Sam, sans-serif;
-  height: 100%;
   overflow: auto;
   overflow-x: hidden;
+}
+
+figure {
+  margin: 0;
 }
 
 img {
@@ -37,6 +40,46 @@ figure img {
 }
 
 /* LAYOUT */
+footer .social,
+.content,
+.copy,
+.logo,
+.nav-bar,
+.page-nav,
+.title {
+  padding: 10px 0;
+}
+
+article,
+main,
+footer,
+.logo,
+.nav-bar,
+.page-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+article,
+footer {
+  flex-direction: column;
+}
+
+footer .social,
+.content,
+.logo img,
+.page-nav,
+.title {
+  margin: 0 auto;
+}
+
+main,
+.nav-bar {
+  justify-content: space-between;
+}
+
 .disabled {
   visibility: hidden;
 }
@@ -45,27 +88,26 @@ figure img {
   height: 110px;
 }
 
-.nav-bar,
-.page-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-between;
+.nav-bar {
+  margin: 0 20px;
 }
 
-.page-nav img {
-  height: 45px;
-  padding: 0 20px;
-}
-
+.nav-item,
+.page-nav img,
 .social img {
   height: 40px;
+  padding: 0 5px;
+}
+
+.page-nav {
+  justify-content: space-around;
+  width: 700px;
 }
 
 /* STYLING */
 .copy {
   font-size: 20px;
+  text-align: center;
 }
 
 .nav-item {
