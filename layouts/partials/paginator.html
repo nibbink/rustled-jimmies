@@ -38,29 +38,29 @@
   <!-- Navigation Menu. Links are disabled if there isn't more post to go through on either direction. -->
   <!-- Oldest post -->
   <a class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}{{ if eq $postDate ($.Scratch.Get "lastDate")}}disabled {{ end }}page-last" href="{{ $.Scratch.Get "last" }}">
-    <img src={{ "/last.svg" | relURL }} alt="Hand drawn double arrows pointing left that link to the last post">
+    <img src={{ "/img/icons/last.svg" | relURL }} alt="Hand drawn double arrows pointing left that link to the last post">
   </a>
 
   <!-- Older post -->
   <a href="{{ if $.Scratch.Get "previous" }}{{ $.Scratch.Get "previous" }} {{ end }}" class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}{{ if eq $postDate ($.Scratch.Get "lastDate")}}disabled {{ end }}page-next">
-    <img src={{ "/previous.svg" | relURL }} alt="Hand drawn arrow pointing left that link to the previous post">
+    <img src={{ "/img/icons/previous.svg" | relURL }} alt="Hand drawn arrow pointing left that link to the previous post">
   </a>
 
   <!-- Generate random post -->
   {{ $randomPosts := shuffle $sections | first 1 }}
   {{ range $randomPosts }}
     <a class="page-random" href="{{ .RelPermalink }}">
-      <img src={{ "/random.svg" | relURL }} alt="Hand drawn question mark that links to a random post">
+      <img src={{ "/img/icons/random.svg" | relURL }} alt="Hand drawn question mark that links to a random post">
     </a>
   {{ end }}
 
   <!-- Newer post -->
   <a href="{{ if $.Scratch.Get "next" }}{{ $.Scratch.Get "next" }} {{ end }}" class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-prev">
-    <img src={{ "/next.svg" | relURL }} alt="Hand drawn arrow pointing right that link to the next post">
+    <img src={{ "/img/icons/next.svg" | relURL }} alt="Hand drawn arrow pointing right that link to the next post">
   </a>
 
   <!-- Newest post -->
   <a class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-last" href="{{ $.Scratch.Get "first" }}">
-    <img src={{ "/first.svg" | relURL }} alt="Hand drawn double arrows pointing right that link to the first post">
+    <img src={{ "/img/icons/first.svg" | relURL }} alt="Hand drawn double arrows pointing right that link to the first post">
   </a>
 </div>

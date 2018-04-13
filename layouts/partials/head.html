@@ -33,20 +33,20 @@
   {{ end }}
   <base href="{{ .Site.BaseURL }}" />
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/avatar.png" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/assets/avatar.png" />
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/avatar.png" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/assets/avatar.png" />
   {{ template "_internal/schema.html" . }}
 
   <!-- Graphic Assets -->
-  <link rel="shortcut icon" href={{ "./favicon.png" | relURL }}>
+  <link rel="shortcut icon" href={{ "/img/assets/favicon.png" | relURL }}>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href={{ "/apple-touch-icon-152x152.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="167x167" href={{ "/apple-touch-icon-167x167.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="180x180" href={{ "/apple-touch-icon-180x180.png" | relURL }}>
-  <link rel="mask-icon" color="#70B4D6" href={{ "/safari-pinned-tab.svg" | relURL }}>
+  <link rel="apple-touch-icon" sizes="152x152" href={{ "/img/assets/apple-touch-icon-152x152.png" | relURL }}>
+  <link rel="apple-touch-icon" sizes="167x167" href={{ "/img/assets/apple-touch-icon-167x167.png" | relURL }}>
+  <link rel="apple-touch-icon" sizes="180x180" href={{ "/img/assets/apple-touch-icon-180x180.png" | relURL }}>
+  <link rel="mask-icon" color="#70B4D6" href={{ "/img/assets/safari-pinned-tab.svg" | relURL }}>
 
   <!-- CSS -->
   <link rel="stylesheet" href={{ "/css/style.css" | relURL }}>

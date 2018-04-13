@@ -1,7 +1,7 @@
 <header>
   <!-- Logo Homepage Link -->
   <a class="logo" href="{{ .Site.BaseURL }}">
-    <img src={{ "/logo.svg" | relURL }} alt="Rustled Jimmies logo">
+    <img src={{ "/img/assets/logo.svg" | relURL }} alt="Rustled Jimmies logo">
   </a>
 
   <div class="nav-bar">
@@ -16,20 +16,20 @@
     <div class="social">
       {{with .Site.Params.instagram}}
       <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank">
-        <img src={{ "/insta.svg" | relURL }} alt="Instagram icon">
+        <img src={{ "/img/icons/insta.svg" | relURL }} alt="Instagram icon">
       </a>
       {{end}}
       {{with .Site.Params.twitter}}
       <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank">
-        <img src={{ "/twitter.svg" | relURL }} alt="Twitter icon">
+        <img src={{ "/img/icons/twitter.svg" | relURL }} alt="Twitter icon">
       </a>
       {{end}}
       <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank">
-        <img src={{ "/rss.svg" | relURL }} alt="RSS icon">
+        <img src={{ "/img/icons/rss.svg" | relURL }} alt="RSS icon">
       </a>
       {{with .Site.Params.patreon}}
       <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank">
-        <img src={{ "/patreon.svg" | relURL }} alt="Patreon icon">
+        <img src={{ "/img/icons/patreon.svg" | relURL }} alt="Patreon icon">
       </a>
       {{end}}
     </div>

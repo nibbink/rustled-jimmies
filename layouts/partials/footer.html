@@ -3,29 +3,23 @@
     <div class="social">
       {{with .Site.Params.instagram}}
       <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">
-        <img src={{ "/insta.svg" | relURL }} alt="Instagram icon">
+        <img src={{ "/img/icons/insta.svg" | relURL }} alt="Instagram icon">
       </a>
-      {{end}} {{with .Site.Params.twitter}}
+      {{end}}
+      {{with .Site.Params.twitter}}
       <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">
-        <img src={{ "/twitter.svg" | relURL }} alt="Twitter icon">
+        <img src={{ "/img/icons/twitter.svg" | relURL }} alt="Twitter icon">
       </a>
       {{end}}
       <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">
-        <img src={{ "/rss.svg" | relURL }} alt="RSS icon">
+        <img src={{ "/img/icons/rss.svg" | relURL }} alt="RSS icon">
       </a>
       {{with .Site.Params.patreon}}
       <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon">
-        <img src={{ "/patreon.svg" | relURL }} alt="Patreon icon">
+        <img src={{ "/img/icons/patreon.svg" | relURL }} alt="Patreon icon">
       </a>
       {{end}}
     </div>
-
-    <!-- Navigation -->
-    <!-- <div class="foot-nav">
-      <a class="nav-link" href='{{ .Site.BaseURL }}/about' title="About this site">{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
-      <a class="nav-link" href='{{ .Site.BaseURL }}/archive' title="All my comics">{{ with .Site.Params.archive }}{{ . }}{{ else }}Archive{{ end }}</a>
-      <a class="nav-link" href='{{ .Site.BaseURL }}/privacy' title="Privacy policy">{{ with .Site.Params.privacy }}{{ . }}{{ else }}Pravicy{{ end }}</a>
-    </div> -->
 
     <!-- Copyright -->
     <div class="copy">&copy;{{ .Site.Copyright }}</div>

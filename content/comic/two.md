@@ -5,4 +5,4 @@ draft = false
 showthedate = false
 +++
 
-{{< figure src="/img/two.png" title="" id="">}}
+{{< figure src="/img/comics/two.png" title="" id="">}}
