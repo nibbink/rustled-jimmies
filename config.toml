@@ -7,36 +7,12 @@ enableRobotsTXT = "true"
 enableEmoji = "true"
 
 [author]
-  name = "[Sam Pratt](http://patreon.com/rustledjimmiescomic)"
+  name = "Sam Pratt"
 
 SectionPagesMenu = "main"
 
 [permalinks]
-  archive = "/:title/"
-
-[[menu.main]]
-  name = "Archive"
-  weight = -110
-  identifier = "archive"
-  url = "/archive/"
-
-[[menu.main]]
-  name = "About"
-  weight = -110
-  identifier = "about"
-  url = "/about/"
-
-[[menu.main]]
-  name = "Shop"
-  weight = -110
-  identifier = "shop"
-  url = "/shop/"
-
-[[menu.main]]
-  name = "Privacy"
-  weight = -110
-  identifier = "privacy"
-  url = "/shop/"
+  archive = "/:comic/:title/"
 
 [params.meta]
   keywords = "comic, webcomic, rustled jimmies"

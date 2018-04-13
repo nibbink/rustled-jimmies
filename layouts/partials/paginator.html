@@ -1,11 +1,5 @@
 <div class="page-nav">
-  {{ $mysection := ($.Site.GetPage "section" .Section).Pages }}
-  {{ range last 1 $mysection }}
-  <a class="page-last" href="{{ .RelPermalink }}" title="Last page">
-    <img src={{ "/latest.svg" | relURL }} alt="">
-  </a>
-  {{ end }}
-  
+  <!-- Range section list, break into permalink variables based on dates -->
   {{ range where .Site.Pages.ByDate "Params.series" .Params.series }}
     {{ if gt $.Date.Unix .Date.Unix }}
       {{ $.Scratch.Set "previous" .Permalink }}
@@ -16,16 +10,45 @@
       {{ $.Scratch.Set "next" .Permalink }}
     {{ end }}
   {{ end }}
-  <a href="{{ if $.Scratch.Get "previous" }}{{ $.Scratch.Get "previous" }} {{ end }}" class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}page-next" title="Next page">
+
+  <!-- Set page section variale for section -->
+  {{ $sections := ($.Site.GetPage "section" .Section).Pages }}
+  <!-- Range last post -->
+  {{ range last 1 $sections }}
+    <!-- Set permalinks to variables -->
+    {{ $.Scratch.Set "last" .RelPermalink }}
+    <!-- Format last date and set to variables -->
+    {{ $lastDate := .PublishDate.Format "2006-01-02" }}
+    {{ $.Scratch.Set "lastDate" $lastDate }}
+  {{ end }}
+  <!-- Range first post -->
+  {{ range first 1 $sections }}
+    <!-- Set permalinks to variables -->
+    {{ $.Scratch.Set "first" .RelPermalink }}
+    <!-- Format first date and set to variables -->
+    {{ $firstDate := .PublishDate.Format "2006-01-02" }}
+    {{ $.Scratch.Set "firstDate" $firstDate }}
+  {{ end }}
+
+  <!-- Get post date, format and set to variables -->
+  {{ $date := .Date.Format "2006-01-02" }}
+  {{ $.Scratch.Set "postDate" $date }}
+  {{ $postDate := $.Scratch.Get "postDate" }}
+
+  <!-- Navigation Menu. Links are disabled if there isn't more post to go through on either direction -->
+  <a class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}{{ if eq $postDate ($.Scratch.Get "lastDate")}}disabled {{ end }}page-last" href="{{ $.Scratch.Get "last" }}" title="Last page">
+    <img src={{ "/latest.svg" | relURL }} alt="">
+  </a>
+
+  <a href="{{ if $.Scratch.Get "previous" }}{{ $.Scratch.Get "previous" }} {{ end }}" class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}{{ if eq $postDate ($.Scratch.Get "lastDate")}}disabled {{ end }}page-next" title="Next page">
     <img src={{ "/next.svg" | relURL }} alt="">
   </a>
+
   <a href="{{ if $.Scratch.Get "next" }}{{ $.Scratch.Get "next" }} {{ end }}" class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-prev" title="Previous page">
     <img src={{ "/prev.svg" | relURL }} alt="">
   </a>
   
-  {{ range first 1 $mysection }}
-  <a class="page-last" href="{{ .RelPermalink }}" title="Last page">
+  <a class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-last" href="{{ $.Scratch.Get "first" }}" title="Last page">
     <img src={{ "/first.svg" | relURL }} alt="">
   </a>
-  {{ end }}
 </div>
