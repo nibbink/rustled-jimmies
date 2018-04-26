@@ -1,12 +1,13 @@
 {{ partial "head.html" . }}
-{{ partial "header.html" . }}
-<main>
-  <img src={{ "/img/assets/ad.png" | relURL }} alt="" class="ad">
-  <article class="post">
-    <h2 class="title">{{ .Title }}</h2>
-    <div class="content">{{ .Content }}</div>
-  </article>
-  <img src={{ "/img/assets/ad.png" | relURL }} alt="" class="ad">
-</main>
-{{ partial "paginator.html" . }}
-{{ partial "footer.html" . }}
+<div class="comic-wrap">
+  {{ partial "header.html" . }}
+  <main>
+    <img src={{ "/img/assets/ad.png" | relURL }} alt="" class="ad">
+    <article class="post">
+      <div class="content">{{ .Content }}</div>
+    </article>
+    <img src={{ "/img/assets/ad.png" | relURL }} alt="" class="ad">
+  </main>
+  {{ partial "paginator.html" . }}
+  {{ partial "footer.html" . }}
+</div>

@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  background: url("/img/background.png") center center no-repeat;
+  background-size: cover;
   font: normal 24px Sam, sans-serif;
   overflow: auto;
   overflow-x: hidden;
@@ -36,7 +38,8 @@ a {
 }
 
 figure img {
-  height: 750px;
+  height: 100%;
+  max-height: 1000px;
 }
 
 /* LAYOUT */
@@ -47,7 +50,7 @@ footer .social,
 .nav-bar,
 .page-nav,
 .title {
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 article,
@@ -68,6 +71,7 @@ footer {
 }
 
 footer .social,
+.comic-wrap,
 .content,
 .logo img,
 .page-nav,
@@ -75,9 +79,22 @@ footer .social,
   margin: 0 auto;
 }
 
-main,
-.nav-bar {
+.nav-bar,
+.page-nav {
   justify-content: space-between;
+}
+
+main {
+  justify-content: center;
+}
+
+.comic-wrap {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  max-width: 900px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
 }
 
 .disabled {
@@ -100,11 +117,18 @@ main,
 }
 
 .page-nav {
-  justify-content: space-around;
+/*   margin-bottom: 20px;
+  margin-top: 10px; */
   width: 700px;
 }
 
 /* STYLING */
+.comic-wrap {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
 .copy {
   font-size: 20px;
   text-align: center;
@@ -116,4 +140,8 @@ main,
 
 .nav-link {
   font-size: 26px;
+}
+
+.ad {
+  display: none;
 }
