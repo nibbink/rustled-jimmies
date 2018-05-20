@@ -1,13 +1,10 @@
-{{ partial "head.html" . }}
-<div class="comic-wrap">
+{{ define "main" }}
+<section class="comic-wrap">
   {{ partial "header.html" . }}
-  <main>
-    <img src={{ "/img/assets/ad.png" | relURL }} alt="" class="ad">
-    <article class="post">
-      <div class="content">{{ .Content }}</div>
-    </article>
-    <img src={{ "/img/assets/ad.png" | relURL }} alt="" class="ad">
-  </main>
+  <article class="post">
+    <div class="content">{{ .Content }}</div>
+  </article>
   {{ partial "paginator.html" . }}
   {{ partial "footer.html" . }}
-</div>
+</section>
+{{ end }}

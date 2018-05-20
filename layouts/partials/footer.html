@@ -1,28 +1,26 @@
-  <footer>
-    <!-- Social Icons -->
-    <div class="social">
-      {{with .Site.Params.instagram}}
-      <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">
-        <img src={{ "/img/icons/insta.svg" | relURL }} alt="Instagram icon">
-      </a>
-      {{end}}
-      {{with .Site.Params.twitter}}
-      <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">
-        <img src={{ "/img/icons/twitter.svg" | relURL }} alt="Twitter icon">
-      </a>
-      {{end}}
-      <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">
-        <img src={{ "/img/icons/rss.svg" | relURL }} alt="RSS icon">
-      </a>
-      {{with .Site.Params.patreon}}
-      <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon">
-        <img src={{ "/img/icons/patreon.svg" | relURL }} alt="Patreon icon">
-      </a>
-      {{end}}
-    </div>
+<footer>
+  <!-- Social Icons -->
+  <div class="social">
+    {{with .Site.Params.instagram}}
+    <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram">
+      <img src={{ "/img/icons/insta.svg" | relURL }} alt="Instagram icon">
+    </a>
+    {{end}}
+    {{with .Site.Params.twitter}}
+    <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter">
+      <img src={{ "/img/icons/twitter.svg" | relURL }} alt="Twitter icon">
+    </a>
+    {{end}}
+    <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed">
+      <img src={{ "/img/icons/rss.svg" | relURL }} alt="RSS icon">
+    </a>
+    {{with .Site.Params.patreon}}
+    <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon">
+      <img src={{ "/img/icons/patreon.svg" | relURL }} alt="Patreon icon">
+    </a>
+    {{end}}
+  </div>
 
-    <!-- Copyright -->
-    <div class="copy">&copy;{{ .Site.Copyright }}</div>
-  </footer>
-</body>
-</html>
+  <!-- Copyright -->
+  <div class="copy">&copy;{{ .Site.Copyright }}</div>
+</footer>

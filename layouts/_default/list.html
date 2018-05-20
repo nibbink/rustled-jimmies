@@ -1,11 +1,12 @@
-{{ partial "head.html" . }}
+{{ define "main" }}
 {{ partial "header.html" . }}
-<div class="content-list">
+<section class="content-list">
   {{ range .Data.Pages.GroupByDate "2006" }}
-    <div class="content-list-date">{{ .Key }}</div>
+    <h2 class="content-list-date">{{ .Key }}</h2>
     {{ range .Pages }}
       {{ .Render "li"}}
     {{ end }}
   {{ end }}
-</div>
+</section>
 {{ partial "footer.html" . }}
+{{ end }}

@@ -4,7 +4,7 @@
     <img src={{ "/img/assets/logo.svg" | relURL }} alt="Rustled Jimmies logo">
   </a>
 
-  <div class="nav-bar">
+  <section class="nav-bar desktop">
     <!-- Navbar -->
     <nav class="nav-menu">
       <a class="nav-item" href="{{ .Site.BaseURL }}/archive">Archive</a>
@@ -13,6 +13,39 @@
     </nav>
   
     <!-- Social Links -->
+    <nav class="social">
+      {{with .Site.Params.instagram}}
+      <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank">
+        <img src={{ "/img/icons/insta.svg" | relURL }} alt="Instagram icon">
+      </a>
+      {{end}}
+      {{with .Site.Params.twitter}}
+      <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank">
+        <img src={{ "/img/icons/twitter.svg" | relURL }} alt="Twitter icon">
+      </a>
+      {{end}}
+      <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank">
+        <img src={{ "/img/icons/rss.svg" | relURL }} alt="RSS icon">
+      </a>
+      {{with .Site.Params.patreon}}
+      <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank">
+        <img src={{ "/img/icons/patreon.svg" | relURL }} alt="Patreon icon">
+      </a>
+      {{end}}
+    </nav>
+  </section>
+  
+  <input id="toggle" type="checkbox" />
+  <label class="hamburger mobile" for="toggle">
+    <div class="top"></div>
+    <div class="meat"></div>
+    <div class="bottom"></div>
+  </label>
+
+  <nav id="menu" class="nav-menu mobile">
+    <a class="nav-item" href="{{ .Site.BaseURL }}/archive">Archive</a>
+    <a class="nav-item" href="{{ .Site.BaseURL }}/about">About</a>
+    <a class="nav-item" href="{{ .Site.BaseURL }}/shop">Shop</a>
     <div class="social">
       {{with .Site.Params.instagram}}
       <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank">
@@ -32,6 +65,6 @@
         <img src={{ "/img/icons/patreon.svg" | relURL }} alt="Patreon icon">
       </a>
       {{end}}
-    </div>
-  </div>
+    </di>
+  </nav>
 </header>
