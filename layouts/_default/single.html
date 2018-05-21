@@ -1,10 +1,13 @@
 {{ define "main" }}
 <section class="comic-wrap">
   {{ partial "header.html" . }}
-  <article class="post">
-    <div class="content">{{ .Content }}</div>
+  <article class="content">
+    {{ .Content }}
   </article>
-  {{ partial "paginator.html" . }}
+  <!-- Ommits Pagination on About page -->
+  {{ if ne $.Params.title "About" }}
+    {{ partial "paginator.html" . }}
+  {{ end }}
   {{ partial "footer.html" . }}
 </section>
 {{ end }}

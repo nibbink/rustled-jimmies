@@ -1,12 +1,18 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
-<section class="content-list">
-  {{ range .Data.Pages.GroupByDate "2006" }}
-    <h2 class="content-list-date">{{ .Key }}</h2>
-    {{ range .Pages }}
-      {{ .Render "li"}}
+<section class="comic-wrap">
+  {{ partial "header.html" . }}
+  <article class="content list">
+    {{ range .Data.Pages.GroupByDate "2006" }}
+      <h1 class="content-list-date">{{ .Key }}</h1>
+      {{ range .Pages }}
+        {{ .Render "li"}}
+      {{ end }}
     {{ end }}
+  </article>
+  <!-- Ommits Pagination on About page -->
+  {{ if ne $.Params.title "About" }}
+    {{ partial "paginator.html" . }}
   {{ end }}
+  {{ partial "footer.html" . }}
 </section>
-{{ partial "footer.html" . }}
 {{ end }}

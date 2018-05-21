@@ -1,8 +1,8 @@
 {{ define "main" }}
 <section class="comic-wrap">
   {{ partial "header.html" . }}
-  {{ $paginator := .Paginator 1 }}
-  {{ range $paginator.Pages }}
+  {{ $sections := ($.Site.GetPage "section" "comic").Pages }}
+  {{ range first 1 $sections }}
     {{ .Render "summary" }}
   {{ end }}
   {{ partial "paginator.html" . }}

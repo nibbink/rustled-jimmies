@@ -21,6 +21,8 @@
     {{end}}
   </div>
 
-  <!-- Copyright -->
-  <div class="copy">&copy;{{ .Site.Copyright }}</div>
+  <!-- Credits -->
+  <section class="credits">
+    <p class="copy">&copy; {{ dateFormat "2006" now }} {{ .Site.Copyright }}</p>
+  </section>
 </footer>

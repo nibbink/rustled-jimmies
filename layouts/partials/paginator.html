@@ -1,4 +1,4 @@
-<div class="page-nav">
+<section class="page-nav">
   <!-- Range section list, break into permalink variables based on dates -->
   {{ range where .Site.Pages.ByDate "Params.series" .Params.series }}
     {{ if gt $.Date.Unix .Date.Unix }}
@@ -12,7 +12,7 @@
   {{ end }}
 
   <!-- Set page section variale for section -->
-  {{ $sections := ($.Site.GetPage "section" .Section).Pages }}
+  {{ $sections := ($.Site.GetPage "section" "comic").Pages }}
   <!-- Range last post -->
   {{ range last 1 $sections }}
     <!-- Set permalinks to variables -->
@@ -63,4 +63,4 @@
   <a class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-last" href="{{ $.Scratch.Get "first" }}">
     <img src={{ "/img/icons/first.svg" | relURL }} alt="Hand drawn double arrows pointing right that link to the first post">
   </a>
-</div>
+</section>
