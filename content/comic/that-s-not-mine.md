@@ -6,5 +6,4 @@ showthedate = false
 title = "That's Not Mine"
 
 +++
-
-{{< figure src="/img/comics/.png" >}}
+![](/comics/thats-not-mine.png){{< figure src="/img/comics/thats-not-mine.png" >}}
