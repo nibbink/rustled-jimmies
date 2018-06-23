@@ -5,4 +5,4 @@ date = "2017-9-16"
 draft = true
 showthedate = false
 +++
-{{< figure src="/img/comics/stop-drop-and-roll.png" >}}
+{{< figure src="/img/comic/stop-drop-and-roll.png" >}}

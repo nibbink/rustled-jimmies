@@ -5,4 +5,4 @@ date = "2018-5-31"
 draft = true
 showthedate = false
 +++
-{{< figure src="/img/comics/fortune-cookie.png" >}}
+{{< figure src="/img/comic/fortune-cookie.png" >}}

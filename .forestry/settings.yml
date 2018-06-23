@@ -4,8 +4,8 @@ auto_deploy: false
 admin_path: "/admin"
 webhook_url: 
 sections: 
-upload_dir: static/img/comics
-public_path: "/comics"
+upload_dir: static/img/comic
+public_path: "/comic"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
