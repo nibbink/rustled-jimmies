@@ -29,3 +29,6 @@ SectionPagesMenu = "main"
 
 [params.google.analytics]
     trackerID = "UA-69833960-2"
+    
+[params.google.adsense]
+    adClient = "ca-pub-7275536170568967"
