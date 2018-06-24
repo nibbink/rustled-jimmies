@@ -2,7 +2,7 @@
 <section class="comic-wrap">
   {{ partial "header.html" . }}
   <main class="content list">
-    {{ range .Data.Pages.GroupByDate "2006" }}
+    {{ range .Data.Pages.GroupByDate "January 2006" }}
       <h1 class="content-list-date">{{ .Key }}</h1>
       <div class="content-container">
         {{ range .Pages }}

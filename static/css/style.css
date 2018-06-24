@@ -126,8 +126,8 @@ article,
   margin: 0 auto 40px;
 }
 .content-item figure {
-  min-height: 200px;
-  max-width: 250px;
+  min-height: 170px;
+  width: 200px;
 }
 .content-item figure img {
   height: auto;
@@ -335,11 +335,11 @@ article,
 .credits p {
   text-align: center;
 }
-.content-date,
+.content-title,
 .credits .copy,
 .footer-nav p,
 .footer-nav a {
-  font-size: 18px;
+  font-size: 20px;
 }
 .nav-item {
   background: #fff url("/img/icons/line.svg") bottom center no-repeat;
