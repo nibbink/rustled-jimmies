@@ -65,6 +65,9 @@ footer .social,
 }
 article,
 footer,
+main,
+.content-container,
+.content-item,
 .credits,
 .hat,
 .logo,
@@ -105,15 +108,20 @@ article,
   height: 100%;
   width: 100%;
 }
+.content-container {
+  flex-wrap: wrap;
+}
 .content-item {
+  flex-direction: column;
   margin: 0 auto 40px;
 }
 .content-item figure {
   min-height: 200px;
+  max-width: 250px;
 }
 .content-item figure img {
   height: auto;
-  width: 250px;
+  max-width: 250px;
 }
 .credits p {
   margin: 0;
@@ -321,12 +329,15 @@ article,
 .credits p {
   text-align: center;
 }
-.nav-item {
-  background: #fff url("/img/icons/line.svg") bottom center no-repeat;
-  font-size: 32px;
+.content-date {
+  font-size: 18px;
 }
 .credits p {
   font-size: 20px;
+}
+.nav-item {
+  background: #fff url("/img/icons/line.svg") bottom center no-repeat;
+  font-size: 32px;
 }
 @media screen and (min-width: 731px) {
   .nav-item:hover {
