@@ -1,10 +1,12 @@
 {{ define "main" }}
 <section class="comic-wrap">
   {{ partial "header.html" . }}
-  {{ $sections := ($.Site.GetPage "section" "comic").Pages }}
-  {{ range first 1 $sections }}
-    {{ .Render "summary" }}
-  {{ end }}
+  {{ $comics := ($.Site.GetPage "section" "comic").Pages }}
+
+    {{ range first 1 $comics }}
+      {{ .Render "summary" }}
+    {{ end }}
+
   {{ partial "paginator.html" . }}
   {{ partial "footer.html" . }}
 </section>

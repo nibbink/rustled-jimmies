@@ -1,8 +1,9 @@
 +++
 title = "Fish In The Sea"
 author = "Sam Pratt"
-date = "2017-9-3"
-draft = true
-showthedate = false
+date = "2017-09-03"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/fish-in-the-sea.png" >}}

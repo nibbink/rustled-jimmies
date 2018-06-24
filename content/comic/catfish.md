@@ -1,8 +1,8 @@
 +++
 title = "Catfish"
 author = "Sam Pratt"
-date = "2017-8-14"
-draft = true
-showthedate = false
+date = "2017-08-14"
+draft = false
+showthedate = true
 +++
 {{< figure src="/img/comic/catfish.png" >}}

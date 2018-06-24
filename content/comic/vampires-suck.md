@@ -1,8 +1,9 @@
 +++
 title = "Vampires Suck"
 author = "Sam Pratt"
-date = "2017-8-13"
-draft = true
-showthedate = false
+date = "2017-08-13"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/vampires-suck.png" >}}

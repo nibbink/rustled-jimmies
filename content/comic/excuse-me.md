@@ -1,8 +1,9 @@
 +++
 title = "Excuse Me"
 author = "Sam Pratt"
-date = "2017-8-8"
-draft = true
-showthedate = false
+date = "2017-08-08"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/excuse-me.png" >}}

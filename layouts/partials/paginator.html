@@ -12,22 +12,23 @@
   {{ end }}
 
   <!-- Set page section variale for section -->
-  {{ $sections := ($.Site.GetPage "section" "comic").Pages }}
-  <!-- Range last post -->
-  {{ range last 1 $sections }}
-    <!-- Set permalinks to variables -->
-    {{ $.Scratch.Set "last" .RelPermalink }}
-    <!-- Format last date and set to variables -->
-    {{ $lastDate := .PublishDate.Format "2006-01-02" }}
-    {{ $.Scratch.Set "lastDate" $lastDate }}
-  {{ end }}
-  <!-- Range first post -->
-  {{ range first 1 $sections }}
-    <!-- Set permalinks to variables -->
-    {{ $.Scratch.Set "first" .RelPermalink }}
-    <!-- Format first date and set to variables -->
-    {{ $firstDate := .PublishDate.Format "2006-01-02" }}
-    {{ $.Scratch.Set "firstDate" $firstDate }}
+  {{ with $.Site.GetPage "section" "comic" }}
+    <!-- Range last post -->
+    {{ range last 1 .Pages }}
+      <!-- Set permalinks to variables -->
+      {{ $.Scratch.Set "last" .RelPermalink }}
+      <!-- Format last date and set to variables -->
+      {{ $lastDate := .PublishDate.Format "2006-01-02" }}
+      {{ $.Scratch.Set "lastDate" $lastDate }}
+    {{ end }}
+    <!-- Range first post -->
+    {{ range first 1 .Pages }}
+      <!-- Set permalinks to variables -->
+      {{ $.Scratch.Set "first" .RelPermalink }}
+      <!-- Format first date and set to variables -->
+      {{ $firstDate := .PublishDate.Format "2006-01-02" }}
+      {{ $.Scratch.Set "firstDate" $firstDate }}
+    {{ end }}
   {{ end }}
 
   <!-- Get post date, format and set to variables -->
@@ -47,11 +48,13 @@
   </a>
 
   <!-- Generate random post -->
-  {{ $randomPosts := shuffle $sections | first 1 }}
-  {{ range $randomPosts }}
-    <a class="page-random" href="{{ .RelPermalink }}">
-      <img src={{ "/img/icons/random.svg" | relURL }} alt="Hand drawn question mark that links to a random post">
-    </a>
+  {{ with $.Site.GetPage "section" "comic" }}
+    {{ $randomPosts := shuffle .Pages | first 1 }}
+    {{ range $randomPosts }}
+      <a class="page-random" href="{{ .RelPermalink }}">
+        <img src={{ "/img/icons/random.svg" | relURL }} alt="Hand drawn question mark that links to a random post">
+      </a>
+    {{ end }}
   {{ end }}
 
   <!-- Newer post -->

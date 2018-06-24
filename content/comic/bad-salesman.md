@@ -1,8 +1,9 @@
 +++
 title = "Bad Salesman"
 author = "Sam Pratt"
-date = "2018-1-12"
-draft = true
-showthedate = false
+date = "2018-01-12"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/bad-salesman.png" >}}

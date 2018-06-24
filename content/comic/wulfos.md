@@ -1,8 +1,9 @@
 +++
 title = "Wulfos"
 author = "Sam Pratt"
-date = "2018-1-25"
-draft = true
-showthedate = false
+date = "2018-01-25"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/wulfos.png" >}}

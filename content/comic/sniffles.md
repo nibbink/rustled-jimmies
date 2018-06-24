@@ -1,8 +1,9 @@
 +++
 title = "Sniffles"
 author = "Sam Pratt"
-date = "2017-8-12"
-draft = true
-showthedate = false
+date = "2017-08-12"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/sniffles.png" >}}

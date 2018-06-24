@@ -1,8 +1,9 @@
 +++
 title = "Blind Fortune"
 author = "Sam Pratt"
-date = "2018-4-11"
-draft = true
-showthedate = false
+date = "2018-04-11"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/blind-fortune.png" >}}

@@ -1,9 +1,9 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
 author = "Sam Pratt"
-date = "{{ now.Format "Jan 2, 2006" }}"
-showthedate = false
+date = "{{ now.Format "2006-01-02" }}"
 draft = false
+showthedate = true
 +++
 
 {{< figure src="/img/comic/.png" >}}

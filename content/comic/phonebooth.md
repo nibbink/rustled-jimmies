@@ -1,8 +1,9 @@
 +++
 title = "Phonebooth"
 author = "Sam Pratt"
-date = "2018-3-4"
-draft = true
-showthedate = false
+date = "2018-03-04"
+draft = false
+showthedate = true
 +++
+
 {{< figure src="/img/comic/phonebooth.png" >}}

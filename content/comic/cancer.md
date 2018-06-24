@@ -1,8 +1,8 @@
 +++
 title = "Cancer"
 author = "Sam Pratt"
-date = "2017-8-30"
-draft = true
-showthedate = false
+date = "2017-08-30"
+draft = false
+showthedate = true
 +++
 {{< figure src="/img/comic/cancer.png" >}}
