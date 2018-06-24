@@ -1,10 +1,9 @@
 <section id="secret" class="secret" role="navigation">
   <!-- Toggle -->
-  <input id="hat" type="checkbox"/>
-  <label class="hat" for="hat">
-  </label>
+  <input id="box" type="checkbox"/>
+  <label class="box" for="box"><img src={{ "/img/icons/bonus.svg" | relURL }}></label>
   <!-- Panel -->  
   <div class="panel">
-    <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} {{ with .Get "id" }}id="{{.}}"{{ end }} class="bonus"/>
+    <img src="{{ .Get "src" }}" alt="{{ .Get "alt"}}" class="bonus"/>
   </div>
 </section>

@@ -72,11 +72,12 @@ main,
 .content-item,
 .credits,
 .footer-nav,
-.hat,
+.box,
 .logo,
 .nav-bar,
 .nav-menu,
 .page-nav,
+.panel,
 .social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,6 +90,7 @@ footer,
   flex-direction: column;
 }
 footer .social,
+.bonus,
 .comic-wrap,
 .content,
 .logo img,
@@ -99,12 +101,14 @@ footer .social,
 figure,
 .footer-nav,
 .nav-bar,
-.nav-menu {
+.nav-menu,
+.panel {
   align-items: center;
 }
 article,
 .footer-nav,
-.hat {
+.box,
+.panel {
   justify-content: center;
 }
 .about,
@@ -140,17 +144,34 @@ article,
 .disabled {
   visibility: hidden;
 }
-.hat {
-  background-color: red;
-  height: 45px;
+.box {
+  height: 100px;
   margin: 10px auto;
-  width: 45px;
+  width: 100px;
 }
-#hat {
+#box {
   display: none;
 }
-#hat:checked ~ .panel {
-  height: 340px;
+#box:checked ~ .panel {
+  height: 360px;
+}
+@media screen and (max-width: 900px) {
+  #box:checked ~ .panel {
+    height: calc(100vw - 370px);
+    min-height: 106px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .box {
+    height: 70px;
+    width: 70px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .box {
+    height: 50px;
+    width: 50px;
+  }
 }
 .logo {
   height: auto;
@@ -195,7 +216,6 @@ article,
   width: 50px;
 }
 .panel {
-  background-color: red;
   clear: both;
   height: 0px;
   list-style: none;
