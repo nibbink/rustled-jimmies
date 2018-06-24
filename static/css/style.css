@@ -174,7 +174,7 @@ article,
 }
 .err-404-img img {
   height: auto;
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
 }
 .err-404-link {
@@ -250,12 +250,14 @@ article,
   height: 100%;
   width: 100%;
 }
-.social-item img:hover {
-  margin: 0 5px 5px;
-  -webkit-transition: margin 0.10s ease;
-  -moz-transition: margin 0.10s ease;
-  -ms-transition: margin 0.10s ease;
-  transition: margin 0.10s ease;
+@media (hover: hover) {
+  .social-item img:hover {
+    margin: 0 5px 5px;
+    -webkit-transition: margin 0.10s ease;
+    -moz-transition: margin 0.10s ease;
+    -ms-transition: margin 0.10s ease;
+    transition: margin 0.10s ease;
+  }
 }
 #toggle {  display: none;}
 @media screen and (max-width: 900px) {
