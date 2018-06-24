@@ -14,9 +14,6 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: url("/img/background.png") center center no-repeat;
-  background-size: cover;
-  font: normal 24px Sam, sans-serif;
   overflow: auto;
   overflow-x: hidden;
     /* Fallback */
@@ -334,11 +331,11 @@ article,
   #menu .nav-item {
     background: unset;
     height: 44px;
-    padding: 8px 0;
   }
   #menu .nav-item,
   #menu .social {
     margin: 0 0 0 auto;
+    padding: 8px 0;
   }
   .page-nav img,
   .social-item img {
@@ -347,7 +344,7 @@ article,
   }  #toggle:checked + .hamburger .top {
     margin-top: 10.5px;    -webkit-transform: rotate(-45deg);    transform: rotate(-45deg);
   }  #toggle:checked + .hamburger .meat {
-    margin-top: 2px;    -webkit-transform: rotate(45deg);    transform: rotate(45deg);  }  #toggle:checked + .hamburger .bottom {    -webkit-transform: scale(0);    transform: scale(0);  }  #toggle:checked ~ #menu {    height: 170px;  }
+    margin-top: 2px;    -webkit-transform: rotate(45deg);    transform: rotate(45deg);  }  #toggle:checked + .hamburger .bottom {    -webkit-transform: scale(0);    transform: scale(0);  }  #toggle:checked ~ #menu {    height: 186px;  }
 }
 @media screen and (max-width: 615px) {
   .nav-bar {

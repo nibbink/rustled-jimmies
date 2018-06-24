@@ -50,6 +50,10 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href={{ "/css/style.css" | relURL }}>
+  
+  <!-- Preloads -->
+  <link rel="preload" href={{ "/fonts/Sam.otf" | relURL }} as="font" type="font/otf" crossorigin>
+  <link rel="preload" as="image" href={{ "/img/background.png" | relURL }} crossorigin>
 
   <!-- Analytics -->
   <script>
@@ -71,6 +75,15 @@
       enable_page_level_ads: true
     });
   </script> -->
+  
+  <!-- Critical CSS -->
+  <style>
+  body {
+    background: url("/img/background.png") center center no-repeat;
+    background-size: cover;
+    font: normal 24px Sam, sans-serif;
+  }
+  </style>
 </head>
 <body>
   <!-- Main content -->
