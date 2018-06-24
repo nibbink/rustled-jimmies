@@ -342,7 +342,7 @@ article,
     height: 35px;
     width: 35px;
   }  #toggle:checked + .hamburger .top {
-    margin-top: 10.5px;    -webkit-transform: rotate(-45deg);    transform: rotate(-45deg);
+    margin-top: 11px;    -webkit-transform: rotate(-45deg);    transform: rotate(-45deg);
   }  #toggle:checked + .hamburger .meat {
     margin-top: 2px;    -webkit-transform: rotate(45deg);    transform: rotate(45deg);  }  #toggle:checked + .hamburger .bottom {    -webkit-transform: scale(0);    transform: scale(0);  }  #toggle:checked ~ #menu {    height: 186px;  }
 }
