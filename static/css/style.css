@@ -268,14 +268,18 @@ article,
     flex-direction: column;
     height: 0px;
     grid-column: 1/3;
-    grid-row: 2;
-    justify-content: space-between;    list-style: none;
+    grid-row: 2;    list-style: none;
     margin: 0;    overflow: hidden;
     padding: 0;
     text-align: center;    transition: height .4s ease;    -webkit-transition: all 0.3s ease;    transition: all 0.3s ease;
-    width: auto;  }
+    width: 100%;  }
   #menu .nav-item {
     background: unset;
+    height: 44px;
+    padding: 8px 0;
+  }
+  #menu .nav-item,
+  #menu .social {
     margin: 0 0 0 auto;
   }
   .page-nav img,
@@ -285,16 +289,15 @@ article,
   }  #toggle:checked + .hamburger .top {
     margin-top: 10.5px;    -webkit-transform: rotate(-45deg);    transform: rotate(-45deg);
   }  #toggle:checked + .hamburger .meat {
-    margin-top: 2px;    -webkit-transform: rotate(45deg);    transform: rotate(45deg);  }  #toggle:checked + .hamburger .bottom {    -webkit-transform: scale(0);    transform: scale(0);  }  #toggle:checked ~ #menu {    height: 190px;  }
+    margin-top: 2px;    -webkit-transform: rotate(45deg);    transform: rotate(45deg);  }  #toggle:checked + .hamburger .bottom {    -webkit-transform: scale(0);    transform: scale(0);  }  #toggle:checked ~ #menu {    height: 170px;  }
 }
 @media screen and (max-width: 615px) {
   .nav-bar {
     flex-direction: column;
     justify-content: space-between;
   }
-  .nav-menu,
-  .social {
-      margin: 10px auto;
+  .nav-menu {
+    margin: 10px auto;
   }
 }
 @media screen and (max-width: 415px) {
@@ -339,7 +342,7 @@ article,
 .credits .copy,
 .footer-nav p,
 .footer-nav a {
-  font-size: 20px;
+  font-size: 28px;
 }
 .nav-item {
   background: #fff url("/img/icons/line.svg") bottom center no-repeat;
@@ -352,6 +355,17 @@ article,
     -moz-transition: background-position-y 0.10s ease;
     -ms-transition: background-position-y 0.10s ease;
     transition: background-position-y 0.10s ease;
+  }
+}
+@media screen and (max-width: 730px) {
+  .content-title,
+  .credits .copy,
+  .footer-nav p,
+  .footer-nav a {
+    font-size: 22px;
+  }
+  .nav-item {
+    font-size: 28px;
   }
 }
 .nav-link {
