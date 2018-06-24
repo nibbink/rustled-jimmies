@@ -154,6 +154,10 @@ article,
 .disabled {
   visibility: hidden;
 }
+.bonus {
+  max-height: 340px;
+  height: 100%;
+}
 .box {
   height: 100px;
   margin: 10px auto;

@@ -1,11 +1,14 @@
 <!-- Bonus panel -->
-<section id="secret" class="secret" role="navigation">
-  <!-- Toggle -->
-  <input id="box" type="checkbox"/>
-  <!-- Bonus icon -->
-  <label class="box" for="box"><img src={{ "/img/icons/bonus.svg" | relURL }}></label>
-  <!-- Panel -->  
-  <div class="panel">
-    <img src="{{ .Get "src" }}" alt="{{ .Get "alt"}}" class="bonus"/>
-  </div>
-</section>
+{{ $bonus := .Get "src" }}
+{{ if ne "" $bonus  }}
+  <section id="secret" class="secret" role="navigation">
+    <!-- Toggle -->
+    <input id="box" type="checkbox"/>
+    <!-- Bonus icon -->
+    <label class="box" for="box"><img src={{ "/img/icons/bonus.svg" | relURL }}></label>
+    <!-- Panel -->  
+    <div class="panel">
+      <img src="/img/bonus/{{ .Get "src" }}" class="bonus"/>
+    </div>
+  </section>
+{{ end }}

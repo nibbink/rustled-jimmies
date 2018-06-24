@@ -6,4 +6,4 @@ draft = false
 showthedate = true
 +++
 
-{{< figure src="/img/comic/something-smells-fishy.png" >}}
+{{< comic src="something-smells-fishy.png" >}}
