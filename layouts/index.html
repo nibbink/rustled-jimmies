@@ -1,7 +1,9 @@
 {{ define "main" }}
 <section class="comic-wrap">
   {{ partial "header.html" . }}
+  <!-- Variable with Comic section -->
   {{ $comics := ($.Site.GetPage "section" "comic").Pages }}
+  <!-- Range Comic section starting from the latest post -->
   {{ range first 1 $comics }}
     {{ .Render "summary" }}
   {{ end }}

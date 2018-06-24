@@ -1,9 +1,13 @@
 {{ define "main" }}
 <section class="comic-wrap">
   {{ partial "header.html" . }}
+  <!-- Comic archive feed -->
   <main class="content list">
-    {{ range .Data.Pages.GroupByDate "January 2006" }}
+    <!-- Range by year -->
+    {{ range .Data.Pages.GroupByDate "2006" }}
+      <!-- Year -->
       <h1 class="content-list-date">{{ .Key }}</h1>
+      <!-- Comic post -->
       <div class="content-container">
         {{ range .Pages }}
           {{ .Render "li"}}

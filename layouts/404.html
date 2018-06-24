@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <!-- 404 -->
+  <main class="err-404">
+    <!-- Link back home -->
+    <a href="{{ .Site.BaseURL }}" class="err-404-link"><img src={{ "/img/icons/previous.svg" | relURL }}><p>Home</p></a>
+    
+    <!-- 404 Image -->
+    <section class="err-404-img">
+      <img src={{ "/img/assets/404.png" | relURL }} alt="">
+    </section>
+    
+    <!-- Copyright -->    
+    <section class="credits">
+      <p class="copy">&copy; {{ dateFormat "2006" now }} {{ .Site.Copyright }}</p>
+    </section>
+  </main>
+{{ end }}

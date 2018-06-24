@@ -71,6 +71,9 @@ main,
 .content-container,
 .content-item,
 .credits,
+.err-404,
+.err-404-img,
+.err-404-link,
 .footer-nav,
 .box,
 .logo,
@@ -86,7 +89,8 @@ main,
 }
 footer,
 .content,
-.credits {
+.credits,
+.err-404 {
   flex-direction: column;
 }
 footer .social,
@@ -99,6 +103,9 @@ footer .social,
   margin: 0 auto;
 }
 figure,
+.err-404,
+.err-404-img,
+.err-404-link,
 .footer-nav,
 .nav-bar,
 .nav-menu,
@@ -106,6 +113,8 @@ figure,
   align-items: center;
 }
 article,
+.err-404,
+.err-404-img,
 .footer-nav,
 .box,
 .panel {
@@ -115,7 +124,8 @@ article,
 .content.list {
   margin: 20px;
 }
-.comic-wrap {
+.comic-wrap,
+.err-404 {
   margin: 40px auto;
   max-width: 900px;
   padding: 20px;
@@ -155,23 +165,28 @@ article,
 #box:checked ~ .panel {
   height: 360px;
 }
-@media screen and (max-width: 900px) {
-  #box:checked ~ .panel {
-    height: calc(100vw - 370px);
-    min-height: 106px;
-  }
+.err-404 {
+  height: calc(100vh - 80px);
 }
-@media screen and (max-width: 550px) {
-  .box {
-    height: 70px;
-    width: 70px;
-  }
+.err-404-img {
+  height: 100%;
+  width: 100%;
 }
-@media screen and (max-width: 400px) {
-  .box {
-    height: 50px;
-    width: 50px;
-  }
+.err-404-img img {
+  height: auto;
+  max-width: 700px;
+  width: 100%;
+}
+.err-404-link {
+  justify-content: flex-start;
+  width: 100%;
+}
+.err-404-link p {
+  height: 30px;
+}
+.err-404-link img {
+  height: 30px;
+  margin-right: 10px;
 }
 .logo {
   height: auto;
@@ -243,6 +258,12 @@ article,
   transition: margin 0.10s ease;
 }
 #toggle {  display: none;}
+@media screen and (max-width: 900px) {
+  #box:checked ~ .panel {
+    height: calc(100vw - 370px);
+    min-height: 106px;
+  }
+}
 @media screen and (max-width: 730px) {
   header {
     display: -ms-grid;
@@ -320,9 +341,21 @@ article,
     margin: 10px auto;
   }
 }
+@media screen and (max-width: 550px) {
+  .box {
+    height: 70px;
+    width: 70px;
+  }
+}
 @media screen and (max-width: 415px) {
   .logo img {
     max-height: 50px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .box {
+    height: 50px;
+    width: 50px;
   }
 }
 @media screen and (max-width: 350px) {
@@ -336,7 +369,8 @@ article,
   line-height: 34px;
 }
 .about h1,
-.content.list h1 {
+.content.list h1,
+.err-404-link p {
   font-size: 40px;
 }
 .about h2,
@@ -349,7 +383,8 @@ article,
 .about ul {
   margin: 0;
 }
-.comic-wrap {
+.comic-wrap,
+.err-404 {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
