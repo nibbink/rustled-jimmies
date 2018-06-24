@@ -9,6 +9,7 @@
   {{ if ne $.Params.title "About" }}
     {{ partial "paginator.html" . }}
   {{ end }}
+  {{ partial "patreon.html" . }}
   {{ partial "footer.html" . }}
 </section>
 {{ end }}

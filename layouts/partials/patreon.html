@@ -1,0 +1,10 @@
+<!-- Patreon banner -->
+<section class="patreon-banner">
+  <!-- Patreon link -->
+  {{with .Site.Params.patreon}}
+  <a href="https://www.patreon.com/{{.}}" target="_blank">
+    <!-- Banner image -->
+    <img src={{ "/img/assets/patreon-banner.jpg" | relURL }}>
+  </a>
+  {{end}}
+</section>

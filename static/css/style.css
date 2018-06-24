@@ -41,7 +41,7 @@ p {
 }
 figure {
   margin: 0;
-  min-height: calc(100vh - 424px);
+  min-height: calc(100vh - 528px);
 }
 img {
   width: auto;
@@ -61,6 +61,7 @@ footer .social,
 .footer-nav,
 .logo,
 .nav-bar,
+.patreon-banner,
 .title {
   padding: 15px 0;
 }
@@ -80,6 +81,7 @@ main,
 .nav-bar,
 .nav-menu,
 .page-nav,
+.patreon-banner,
 .panel,
 .social {
   display: -webkit-box;
@@ -109,7 +111,8 @@ figure,
 .footer-nav,
 .nav-bar,
 .nav-menu,
-.panel {
+.panel,
+.patreon-banner {
   align-items: center;
 }
 article,
@@ -117,7 +120,8 @@ article,
 .err-404-img,
 .footer-nav,
 .box,
-.panel {
+.panel,
+.patreon-banner {
   justify-content: center;
 }
 .about,
@@ -246,6 +250,13 @@ article,
   transition: all 0.3s ease;
   transition: height .4s ease;
   width: auto;
+}
+.patreon-banner {
+  width: 100%;
+}
+.patreon-banner img {
+  max-width: 700px;
+  width: 100%;
 }
 .social {
   margin: 5px 0;
