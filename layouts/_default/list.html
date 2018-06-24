@@ -15,10 +15,6 @@
       </div>
     {{ end }}
   </main>
-  <!-- Ommits Pagination on About page -->
-  {{ if ne $.Params.title "About" }}
-    {{ partial "paginator.html" . }}
-  {{ end }}
   {{ partial "footer.html" . }}
 </section>
 {{ end }}
