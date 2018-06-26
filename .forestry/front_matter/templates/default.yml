@@ -17,3 +17,5 @@ fields:
   type: boolean
   hidden: false
   default: true
+pages:
+- content/curiosity-killed-the-cat.md
