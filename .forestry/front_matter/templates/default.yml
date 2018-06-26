@@ -18,6 +18,7 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/do-you-mind.md
 - content/comic/knock-knock.md
 - content/comic/creation.md
 - content/comic/curiosity-killed-the-cat.md
