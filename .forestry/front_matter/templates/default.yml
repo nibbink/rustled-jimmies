@@ -17,5 +17,3 @@ fields:
   type: boolean
   hidden: false
   default: true
-pages:
-- content/comic/that-s-not-mine.md
