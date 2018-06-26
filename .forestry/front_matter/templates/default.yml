@@ -19,3 +19,4 @@ fields:
   default: true
 pages:
 - content/comic/.md
+- content/comic/.md
