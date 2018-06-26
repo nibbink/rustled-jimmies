@@ -21,10 +21,9 @@
   {{ .Hugo.Generator }}
 
   <!-- RSS -->
-  <link rel="canonical" href="{{ .Permalink }}">
-  {{ if .RSSLink }}
-  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}"/>
-  {{ end }}
+  {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
 
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
