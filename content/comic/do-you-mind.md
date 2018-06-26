@@ -1,6 +1,7 @@
 +++
-date = "2018-06-26T17:11:50+00:00"
+date = "2017-08-06"
 draft = true
 title = "Do You Mind"
 
 +++
+{{< comic src="do-you-mind.png" >}}
