@@ -1,6 +1,6 @@
 +++
 date = "2017-08-06"
-draft = true
+draft = false
 title = "Do You Mind"
 
 +++
