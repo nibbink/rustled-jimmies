@@ -4,3 +4,4 @@ draft = true
 title = "Curiosity killed the cat"
 
 +++
+{{< comic src="curiosity-killed-the-cat.png" >}}
