@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://www.rustledjimmies.net/"
 languageCode = "en-us"
 title = "Rustled Jimmies"
 copyright = "Rustled Jimmies"

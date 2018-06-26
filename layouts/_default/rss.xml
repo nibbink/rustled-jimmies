@@ -20,6 +20,8 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
+      <dc:creator>{{ .Params.author }}</dc:creator>
+      <media:content type="image/jpeg" medium="image" width="900" height="600" url="{{ .Site.BaseURL }}img/comic/{{ .Params.img | safeHTML }}" />
     </item>
     {{ end }}
   </channel>
