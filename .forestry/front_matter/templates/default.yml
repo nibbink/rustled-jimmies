@@ -19,3 +19,4 @@ fields:
   default: true
 pages:
 - content/curiosity-killed-the-cat.md
+- content/comic/curiosity-killed-the-cat.md
