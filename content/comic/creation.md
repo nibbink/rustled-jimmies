@@ -1,5 +1,5 @@
 +++
-date = "2017-08-7T02:30:01+00:00"
+date = "08/07/2017 12:00 AM -0400"
 draft = false
 title = "Creation"
 
