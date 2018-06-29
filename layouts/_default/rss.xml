@@ -21,7 +21,7 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
       <dc:creator>{{ .Params.author }}</dc:creator>
-      <media:content type="image/jpeg" medium="image" width="900" height="600" url="{{ .Site.BaseURL }}img/comic/{{ .Params.img | safeHTML }}" />
+      <media:content type="image/jpeg" medium="image" width="900" height="600" url="{{ .Site.BaseURL }}img/comic/{{ .Params.img }}" />
     </item>
     {{ end }}
   </channel>
