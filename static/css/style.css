@@ -440,6 +440,32 @@ article,
 .nav-link {
   font-size: 26px;
 }
-.ad {
+/* Ads */
+.ads {
+  margin: 0 auto;
+}
+.desktop-ad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.mobile-ad {
   display: none;
+}
+@media screen and (max-width: 728px) {
+  .desktop-ad {
+    display: none;
+  }
+  .mobile-ad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+@media screen and (max-width: 4688px) {
+  .mobile-ad {
+    display: none;
+  }
 }
