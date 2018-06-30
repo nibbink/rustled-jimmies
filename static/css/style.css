@@ -441,7 +441,7 @@ article,
   font-size: 26px;
 }
 /* Ads */
-.ads {
+.ads iframe {
   margin: 0 auto;
 }
 .desktop-ad {
@@ -464,7 +464,7 @@ article,
     display: flex;
   }
 }
-@media screen and (max-width: 4688px) {
+@media screen and (max-width: 468px) {
   .mobile-ad {
     display: none;
   }
