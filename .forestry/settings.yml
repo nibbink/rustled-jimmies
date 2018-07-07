@@ -3,7 +3,13 @@ new_page_extension: md
 auto_deploy: false
 admin_path: "/admin"
 webhook_url: 
-sections: 
+sections:
+- path: content/comic
+  label: Comic
+  create: all
+- path: content
+  label: Pages
+  create: all
 upload_dir: static/img/comic
 public_path: "/comic"
 front_matter_path: ''
