@@ -4,3 +4,4 @@ draft = true
 title = "Gather The Knights"
 
 +++
+{{< comic src="gather-the-knights.png" >}}
