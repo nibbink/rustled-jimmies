@@ -4,3 +4,4 @@ draft = true
 title = "Cold Blooded"
 
 +++
+{{< comic src="cold-blooded.png" >}}
