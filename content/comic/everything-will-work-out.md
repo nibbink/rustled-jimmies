@@ -4,3 +4,4 @@ draft = true
 title = "Everything Will Work Out"
 
 +++
+{{< comic src="work-out.png" >}}
