@@ -1,6 +1,5 @@
 +++
 date = "2018-08-08T15:08:58+00:00"
-draft = true
 title = "Everything Will Work Out"
 
 +++
