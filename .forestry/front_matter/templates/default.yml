@@ -19,8 +19,8 @@ fields:
   hidden: false
   default: true
 pages:
-- content/comic/curiosity-killed-the-cat.md
-- content/comic/creation.md
+- content/comic/everything-will-work-out.md
 - content/comic/cold-blooded.md
 - content/comic/gather-the-knights.md
-- content/comic/everything-will-work-out.md
+- content/comic/creation.md
+- content/comic/curiosity-killed-the-cat.md
