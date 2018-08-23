@@ -19,6 +19,7 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/concentration.md
 - content/comic/everything-will-work-out.md
 - content/comic/cold-blooded.md
 - content/comic/gather-the-knights.md
