@@ -4,3 +4,4 @@ draft = true
 title = "Cinnamon"
 
 +++
+{{< comic src="cinnamon.png" >}}
