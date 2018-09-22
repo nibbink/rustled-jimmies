@@ -19,6 +19,7 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/Struggle.md
 - content/comic/cinnamon.md
 - content/comic/thirsty.md
 - content/comic/man-spider.md
