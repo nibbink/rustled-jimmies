@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="comic-wrap">
+<main class="comic-wrap">
   {{ partial "header.html" . }}
   <!-- Variable with Comic section -->
   {{ $comics := ($.Site.GetPage "section" "comic").Pages }}
@@ -10,5 +10,5 @@
   {{ partial "paginator.html" . }}
   {{ partial "patreon.html" . }}
   {{ partial "footer.html" . }}
-</section>
+</main>
 {{ end }}

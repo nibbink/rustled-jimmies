@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
+  {{ .Hugo.Generator }}
+  <meta charset="utf-8" />
+  <base href="{{ .Site.BaseURL }}">
   <!-- Variable Title. Will display current comic name as site title. -->
   <title>
     {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
@@ -17,8 +20,8 @@
   <meta name="author" content="{{ .Site.Author.name }}" />
   <meta name="description" content="{{ .Site.Params.meta.description }}" />
   <meta name="keywords" content="{{ .Site.Params.meta.keywords }}" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
-  {{ .Hugo.Generator }}
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
+  <meta name="theme-color" content="#70B4D6">
 
   <!-- RSS -->
   {{ with .OutputFormats.Get "rss" -}}
@@ -32,26 +35,69 @@
   {{ end }}
   <base href="{{ .Site.BaseURL }}" />
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/assets/avatar.png" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/icons/avatar.png" />
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/assets/avatar.png" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}/icons/avatar.png" />
   {{ template "_internal/schema.html" . }}
 
+  <!-- Fonts -->  
+  <link rel="preload" href={{ "fonts/Sam-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href={{ "fonts/Sam-subset.woff" | relURL }} as="font" type="font/woff" crossorigin>
+
+  <!-- Critical -->
+  {{ partial "critical.html" . }}
+
+  <!-- Critical Font Loading -->
+  <script>
+      (function() {
+        "use strict";
+        // Optimization for Repeat Views
+        if( sessionStorage.fontsLoadedCriticalFoftPreloadFallback ) {
+          document.documentElement.className += " fonts-loaded-2";
+          return;
+        } else if( "fonts" in document ) {
+          document.fonts.load("1em Sam Subset").then(function () {
+            document.documentElement.className += " fonts-loaded-1";
+            Promise.all([
+              document.fonts.load("400 1em Sam")
+            ]).then(function () {
+              document.documentElement.className += " fonts-loaded-2";
+              // Optimization for Repeat Views
+              sessionStorage.fontsLoadedCriticalFoftPreloadFallback = true;
+            });
+          });
+        } else {
+          // use fallback
+          var ref = document.getElementsByTagName( "script" )[ 0 ];
+          var script = document.createElement( "script" );
+          script.src = "js/critical-fallback.js";
+          script.async = true;
+          ref.parentNode.insertBefore( script, ref );
+        }
+      })();
+      </script>
+
+  <!-- Stylesheets -->
+  {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="{{ "/manifest.json" | relURL }}">
+
   <!-- Graphic Assets -->
-  <link rel="shortcut icon" href={{ "/img/assets/favicon.png" | relURL }}>
+  <link rel="shortcut icon" href={{ "/icons/favicon.png" | relURL }}>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href={{ "/img/assets/apple-touch-icon-152x152.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="167x167" href={{ "/img/assets/apple-touch-icon-167x167.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="180x180" href={{ "/img/assets/apple-touch-icon-180x180.png" | relURL }}>
-  <link rel="mask-icon" color="#70B4D6" href={{ "/img/assets/safari-pinned-tab.svg" | relURL }}>
+  <link rel="apple-touch-icon" sizes="152x152" href={{ "/icons/apple-touch-icon-152x152.png" | relURL }}>
+  <link rel="apple-touch-icon" sizes="167x167" href={{ "/icons/apple-touch-icon-167x167.png" | relURL }}>
+  <link rel="apple-touch-icon" sizes="180x180" href={{ "/icons/apple-touch-icon-180x180.png" | relURL }}>
+  <link rel="mask-icon" color="#70B4D6" href={{ "/icons/safari-pinned-tab.svg" | relURL }}>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href={{ "/css/style.css" | relURL }}>
-  
-  <!-- Preloads -->
-  <link rel="preload" href={{ "/fonts/Sam.otf" | relURL }} as="font" type="font/otf" crossorigin>
+  <!-- Android Chrome Icon -->
+  <link rel="android-chrome" sizes="128x128" href="{{ "/icons/android-chrome-128x128.png" | relURL }}">
+  <link rel="android-chrome" sizes="192x192" href="{{ "/icons/android-chrome-192x192.png" | relURL }}">
+  <link rel="android-chrome" sizes="512x512" href="{{ "/icons/android-chrome-512x512.png" | relURL }}">
   
   <!-- Analytics -->
   <script>
@@ -73,19 +119,13 @@
       enable_page_level_ads: true
     });
   </script> -->
-  
-  <!-- Critical CSS -->
-  <style>
-  body {
-    background: url("/img/background.png") center center no-repeat;
-    background-size: cover;
-    font: normal 24px Sam, sans-serif;
-  }
-  </style>
 </head>
 <body>
   <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
+
+  <!-- Scripts -->
+  {{ partial "scripts.html" . }}
 </body>
 </html>
