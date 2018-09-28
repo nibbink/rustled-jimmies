@@ -3,5 +3,8 @@
   <!-- Comic title -->
   <p class="content-title">{{ .Title }}</p>
   <!-- Comic image -->
-  <a href="{{ .Permalink }}">{{ .Content }}</a>
+  <a href="{{ .Permalink }}">
+    <p class="visually-hidden">{{ .Title }}</p>
+    {{ .Content }}
+  </a>
 </section>

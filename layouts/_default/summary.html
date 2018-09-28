@@ -1,5 +1,8 @@
 <!-- Comic post preview -->
 <article class="post">
   <!-- Comic -->
-  <a class="content" href='{{ .Permalink }}'>{{ .Content }}</a>
+  <a class="content" href='{{ .Permalink }}'>
+      <p class="visually-hidden">{{ .Title }}</p>
+    {{ .Content }}
+  </a>
 </article>

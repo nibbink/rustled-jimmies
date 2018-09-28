@@ -2,9 +2,10 @@
 <section class="patreon-banner">
   <!-- Patreon link -->
   {{with .Site.Params.patreon}}
-  <a href="https://www.patreon.com/{{.}}" target="_blank">
+  <a href="https://www.patreon.com/{{.}}" target="_blank" rel="noopener">
+    <p class="visually-hidden">Patreon</p>
     <!-- Banner image -->
-    <img src={{ "/img/assets/patreon-banner.jpg" | relURL }}>
+    <img src={{ "/img/assets/patreon-banner.jpg" | relURL }} class="lazy">
   </a>
   {{end}}
 </section>
