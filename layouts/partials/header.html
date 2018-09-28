@@ -50,20 +50,20 @@
     <div class="social">
       {{with .Site.Params.instagram}}
       <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" rel="noopener">
-        <img src={{ "/img/assets/insta.svg" | relURL }} alt="Instagram icon" class="lazy">
+        <img data-src={{ "/img/assets/insta.svg" | relURL }} alt="Instagram icon" class="lazy">
       </a>
       {{end}}
       {{with .Site.Params.twitter}}
       <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" rel="noopener">
-        <img src={{ "/img/assets/twitter.svg" | relURL }} alt="Twitter icon" class="lazy">
+        <img data-src={{ "/img/assets/twitter.svg" | relURL }} alt="Twitter icon" class="lazy">
       </a>
       {{end}}
       <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank">
-        <img src={{ "/img/assets/rss.svg" | relURL }} alt="RSS icon" class="lazy" rel="noopener">
+        <img data-src={{ "/img/assets/rss.svg" | relURL }} alt="RSS icon" class="lazy" rel="noopener">
       </a>
       {{with .Site.Params.patreon}}
       <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" rel="noopener">
-        <img src={{ "/img/assets/patreon.svg" | relURL }} alt="Patreon icon" class="lazy">
+        <img data-src={{ "/img/assets/patreon.svg" | relURL }} alt="Patreon icon" class="lazy">
       </a>
       {{end}}
     </di>

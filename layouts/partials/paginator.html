@@ -1,4 +1,4 @@
-<!-- Pagination -->
+ class="lazy"<!-- Pagination -->
 <section class="page-nav">
   <!-- Range section list, break into permalink variables based on dates -->
   {{ range where .Site.Pages.ByDate "Params.series" .Params.series }}
@@ -39,29 +39,29 @@
   <!-- Navigation Menu. Links are disabled if there isn't more post to go through on either direction. -->
   <!-- Oldest post -->
   <a class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}{{ if eq $postDate ($.Scratch.Get "lastDate")}}disabled {{ end }}page-last" href="{{ $.Scratch.Get "last" }}">
-    <img src={{ "/img/assets/last.svg" | relURL }} alt="Hand drawn double arrows pointing left that link to the last post">
+    <img data-src={{ "/img/assets/last.svg" | relURL }} alt="Hand drawn double arrows pointing left that link to the last post" class="lazy">
   </a>
 
   <!-- Older post -->
   <a href="{{ if $.Scratch.Get "previous" }}{{ $.Scratch.Get "previous" }} {{ end }}" class="{{ if not ($.Scratch.Get "previous") }}disabled {{ end }}{{ if eq $postDate ($.Scratch.Get "lastDate")}}disabled {{ end }}page-next">
-    <img src={{ "/img/assets/previous.svg" | relURL }} alt="Hand drawn arrow pointing left that link to the previous post">
+    <img data-src={{ "/img/assets/previous.svg" | relURL }} alt="Hand drawn arrow pointing left that link to the previous post" class="lazy">
   </a>
 
   <!-- Generate random post -->
   {{ $randomPosts := shuffle $section | first 1 }}
   {{ range $randomPosts }}
     <a class="page-random" href="{{ .RelPermalink }}">
-      <img src={{ "/img/assets/random.svg" | relURL }} alt="Hand drawn question mark that links to a random post">
+      <img data-src={{ "/img/assets/random.svg" | relURL }} alt="Hand drawn question mark that links to a random post" class="lazy">
     </a>
   {{ end }}
 
   <!-- Newer post -->
   <a href="{{ if $.Scratch.Get "next" }}{{ $.Scratch.Get "next" }} {{ end }}" class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-prev">
-    <img src={{ "/img/assets/next.svg" | relURL }} alt="Hand drawn arrow pointing right that link to the next post">
+    <img data-src={{ "/img/assets/next.svg" | relURL }} alt="Hand drawn arrow pointing right that link to the next post" class="lazy">
   </a>
 
   <!-- Newest post -->
   <a class="{{ if not ($.Scratch.Get "next") }}disabled {{ end }}page-last" href="{{ $.Scratch.Get "first" }}">
-    <img src={{ "/img/assets/first.svg" | relURL }} alt="Hand drawn double arrows pointing right that link to the first post">
+    <img data-src={{ "/img/assets/first.svg" | relURL }} alt="Hand drawn double arrows pointing right that link to the first post" class="lazy">
   </a>
 </section>
