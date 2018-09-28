@@ -1,3 +1,18 @@
+<!-- Service Worker -->
+<script>
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register("/sw.js", { scope: "/" });
+    navigator.serviceWorker.ready.then(function(registration) {
+      console.log("Service Worker Ready");
+    });
+    window.addEventListener("load", function() {
+      if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage({ command: "trimCaches" });
+      }
+    });
+  }
+</script>
+<!-- lazy Loader -->
 {{ $js := resources.Get "js/lazy-loading.js" | minify | fingerprint }}
 <script src="{{ $js.Permalink }}"></script>
 <script>

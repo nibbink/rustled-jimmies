@@ -81,6 +81,9 @@
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
+  <!-- Manifest -->
+  <link rel="manifest" href="{{ "/manifest.json" | relURL }}">
+
   <!-- Graphic Assets -->
   <link rel="shortcut icon" href={{ "/icons/favicon.png" | relURL }}>
   <meta name="apple-mobile-web-app-capable" content="yes">
