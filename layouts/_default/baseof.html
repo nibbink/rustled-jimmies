@@ -35,9 +35,9 @@
   {{ end }}
   <base href="{{ .Site.BaseURL }}" />
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/assets/avatar.png" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/icons/avatar.png" />
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/assets/avatar.png" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}/icons/avatar.png" />
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
@@ -82,14 +82,19 @@
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
   <!-- Graphic Assets -->
-  <link rel="shortcut icon" href={{ "/img/assets/favicon.png" | relURL }}>
+  <link rel="shortcut icon" href={{ "/icons/favicon.png" | relURL }}>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href={{ "/img/assets/apple-touch-icon-152x152.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="167x167" href={{ "/img/assets/apple-touch-icon-167x167.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="180x180" href={{ "/img/assets/apple-touch-icon-180x180.png" | relURL }}>
-  <link rel="mask-icon" color="#70B4D6" href={{ "/img/assets/safari-pinned-tab.svg" | relURL }}>
+  <link rel="apple-touch-icon" sizes="152x152" href={{ "/icons/apple-touch-icon-152x152.png" | relURL }}>
+  <link rel="apple-touch-icon" sizes="167x167" href={{ "/icons/apple-touch-icon-167x167.png" | relURL }}>
+  <link rel="apple-touch-icon" sizes="180x180" href={{ "/icons/apple-touch-icon-180x180.png" | relURL }}>
+  <link rel="mask-icon" color="#70B4D6" href={{ "/icons/safari-pinned-tab.svg" | relURL }}>
+
+  <!-- Android Chrome Icon -->
+  <link rel="android-chrome" sizes="128x128" href="{{ "icons/icons/android-chrome-128x128.png" | relURL }}">
+  <link rel="android-chrome" sizes="192x192" href="{{ "icons/icons/android-chrome-192x192.png" | relURL }}">
+  <link rel="android-chrome" sizes="512x512" href="{{ "icons/icons/android-chrome-512x512.png" | relURL }}">
   
   <!-- Analytics -->
   <script>

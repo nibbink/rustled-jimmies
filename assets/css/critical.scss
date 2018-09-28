@@ -72,7 +72,7 @@ main.comic-wrap {
           margin: 10px auto;
         }
         a.nav-item {
-          background: #fff url("/img/icons/line.svg") bottom center no-repeat;
+          background: #fff url("/img/assets/line.svg") bottom center no-repeat;
           font-size: 32px;
           height: 32px;
           margin-bottom: 10px;
@@ -208,6 +208,7 @@ main.comic-wrap {
     @extend %flex;
     @extend %flex-column;
     @extend %margin-horizontal-center;
+    min-height: calc(100vh - 835px);
     a.content {
       @extend %flex;
       @extend %flex-column;
@@ -242,6 +243,7 @@ main.comic-wrap {
     margin: 20px;
     h1.content-list-date {
       font-size: 40px;
+      text-align: center;
       @include media-query-max(730px) {
         font-size: 34px;
       }

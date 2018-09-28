@@ -1,13 +1,13 @@
 <section class="page-nav">
   {{ if .Paginator.HasPrev }}
     <a class="page-prev" href="{{ .Paginator.Prev.URL }}">
-      <img src={{ "/img/icons/previous.svg" | relURL }}>
+      <img src={{ "/img/assets/previous.svg" | relURL }}>
     </a>
   {{ end }}
 
   {{ if .Paginator.HasNext }}
     <a class="page-next" href="{{ .Paginator.Next.URL }}">
-      <img src={{ "/img/icons/next.svg" | relURL }}>
+      <img src={{ "/img/assets/next.svg" | relURL }}>
     </a>
   {{ end }}
 </section>
