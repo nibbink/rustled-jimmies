@@ -1,4 +1,5 @@
 ---
+label: Default
 hide_body: false
 is_partial: false
 fields:
@@ -18,5 +19,13 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/Struggle.md
+- content/comic/cinnamon.md
+- content/comic/thirsty.md
+- content/comic/man-spider.md
+- content/comic/concentration.md
+- content/comic/everything-will-work-out.md
+- content/comic/cold-blooded.md
+- content/comic/gather-the-knights.md
 - content/comic/creation.md
 - content/comic/curiosity-killed-the-cat.md
