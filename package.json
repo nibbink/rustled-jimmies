@@ -1,0 +1,37 @@
+{
+  "name": "rustled-jimmies",
+  "version": "2.0.0",
+  "description": "A comic featuring plump lil dudes with cute butts crated by Sam Pratt.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "cssnano": "^4.1.4",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "build": "gulp build; hugo",
+    "start": "concurrently \"gulp\" \"hugo server --disableFastRender\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fourjuaneight@github.com/four-one-eight/rustled-jimmies.git"
+  },
+  "keywords": [
+    "comic",
+    "webcomic",
+    "rustled jimmies"
+  ],
+  "author": "Sam Pratt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/four-one-eight/rustled-jimmies/issues"
+  },
+  "homepage": "https://github.com/four-one-eight/rustled-jimmies#readme"
+}

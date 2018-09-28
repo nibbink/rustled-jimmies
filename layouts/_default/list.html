@@ -1,8 +1,8 @@
 {{ define "main" }}
-<section class="comic-wrap">
+<main class="comic-wrap">
   {{ partial "header.html" . }}
   <!-- Comic archive feed -->
-  <main class="content list">
+  <section class="content list">
     <!-- Range by year -->
     {{ range .Data.Pages.GroupByDate "2006" }}
       <!-- Year -->
@@ -14,8 +14,8 @@
         {{ end }}
       </div>
     {{ end }}
-  </main>
+  </section>
   {{ partial "patreon.html" . }}
   {{ partial "footer.html" . }}
-</section>
+</main>
 {{ end }}

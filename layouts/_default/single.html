@@ -1,8 +1,8 @@
 {{ define "main" }}
-<section class="comic-wrap">
+<main class="comic-wrap">
   {{ partial "header.html" . }}
   <!-- Comic post -->
-  <article class="content">
+  <article class="post">
     {{ .Content }}
   </article>
   <!-- Ommits Pagination on About page -->
@@ -11,5 +11,5 @@
   {{ end }}
   {{ partial "patreon.html" . }}
   {{ partial "footer.html" . }}
-</section>
+</main>
 {{ end }}
