@@ -5,4 +5,4 @@ date = "2017-08-14"
 draft = false
 showthedate = true
 +++
-{{< comic src="catfish.png" >}}
+{{< comic src="catfish.jpg" >}}

@@ -6,4 +6,4 @@ draft = false
 showthedate = true
 +++
 
-{{< comic src="tear-free.png" >}}
+{{< comic src="tear-free.jpg" >}}

@@ -15,7 +15,6 @@
     '/fonts/Sam-subset.woff2',
     '/fonts/Sam.woff',
     '/fonts/Sam.woff2',
-    '/img/background.png',
     '/img/assets/bonus.svg',
     '/img/assets/first.svg',
     '/img/assets/insta.svg',

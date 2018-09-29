@@ -58,8 +58,8 @@
         <img data-src={{ "/img/assets/twitter.svg" | relURL }} alt="Twitter icon" class="lazy">
       </a>
       {{end}}
-      <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank">
-        <img data-src={{ "/img/assets/rss.svg" | relURL }} alt="RSS icon" class="lazy" rel="noopener">
+      <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" rel="noopener">
+        <img data-src={{ "/img/assets/rss.svg" | relURL }} alt="RSS icon" class="lazy">
       </a>
       {{with .Site.Params.patreon}}
       <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" rel="noopener">

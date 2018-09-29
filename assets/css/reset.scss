@@ -7,8 +7,7 @@ html {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
   body {
-    background: url("/img/background.png") center center no-repeat;
-    background-size: cover;
+    background: linear-gradient(to bottom, #edefb4 0%,#ffffff 50%,#ffa5eb 100%);
     font-size: 24px;
     overflow: auto;
     overflow-x: hidden;
