@@ -19,6 +19,7 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/curiosity-killed-the-cat.md
 - content/comic/Struggle.md
 - content/comic/cinnamon.md
 - content/comic/thirsty.md
@@ -28,4 +29,3 @@ pages:
 - content/comic/cold-blooded.md
 - content/comic/gather-the-knights.md
 - content/comic/creation.md
-- content/comic/curiosity-killed-the-cat.md
