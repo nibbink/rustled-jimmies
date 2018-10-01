@@ -5,11 +5,4 @@ draft = false
 showthedate = false
 +++
 
-It looks like you're offline right now.
-
-No worries; much of my site is available regardless of network connection.
-
-- [Home](/)
-- [Comic](/Comic/)
-
-Along with any other pages you've previously viewed.
+{{< img src="offline-glenn.svg" alt="Hey, you're offline and I'm dead. So uh... it looks like we have some things in common. Hi I'm Glenn." class="offline" >}}

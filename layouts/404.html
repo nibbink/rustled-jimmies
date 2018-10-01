@@ -6,7 +6,8 @@
     
     <!-- 404 Image -->
     <section class="err-404-img">
-      <img src={{ "/img/assets/404.png" | relURL }} alt="">
+        {{ $404 := resources.Get "img/404.png" }}
+      <img src={{ $404.Permalink }} alt="Oh... You're not supposed to be here...">
     </section>
     
     <!-- Copyright -->    

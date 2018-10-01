@@ -1,0 +1,11 @@
+<!-- image -->
+{{ $img := resources.Get (print "img/" (.Get "src")) }}
+<figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+  <img src="{{ $img.Permalink }}" {{ with .Get "alt"}}alt="{{.}}"{{ end }} {{ with .Get "id" }}id="{{.}}"{{ end }}/>
+  {{ with .Get "caption" }}
+    <figcaption>
+      <p>{{.}}</p>
+    </figcaption>
+  {{ end }}
+</figure>
+<!-- image -->
