@@ -127,6 +127,47 @@ main.comic-wrap {
       }
     }
   }
+  section.err-404-link {
+    @extend %content-flex-start;
+    @extend %flex;
+    @extend %items-center;
+    img {
+      height: 30px;
+      margin-right: 15px;
+    }
+    p {
+      font-size: 40px;
+      line-height: 32px;
+      margin-top: 5px
+    }
+  }
+  section.err-404-img {
+    @extend %content-center;
+    @extend %flex;
+    @extend %items-center;
+    min-height: calc(100vh - 185px);
+    img {
+      height: 600px;
+      width: 600px;
+    }
+    @include media-query-max(700px) {
+      height: 500px;
+      width: 500px;
+    }
+    @include media-query-max(560px) {
+      height: 350px;
+      width: 350px;
+    }
+    @include media-query-max(430px) {
+      height: 250px;
+      width: 250px;
+    }
+  }
+  section.credits {
+    @extend %content-center;
+    @extend %flex;
+    @extend %items-center;
+  }
   figure.offline {
     @extend %content-center;
     @extend %flex;
