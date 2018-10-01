@@ -127,7 +127,7 @@ main.comic-wrap {
       }
     }
   }
-  section.err-404-link {
+  a.err-404-link {
     @extend %content-flex-start;
     @extend %flex;
     @extend %items-center;
