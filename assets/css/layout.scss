@@ -149,18 +149,18 @@ main.comic-wrap {
     img {
       height: 600px;
       width: 600px;
-    }
-    @include media-query-max(700px) {
-      height: 500px;
-      width: 500px;
-    }
-    @include media-query-max(560px) {
-      height: 350px;
-      width: 350px;
-    }
-    @include media-query-max(430px) {
-      height: 250px;
-      width: 250px;
+      @include media-query-max(700px) {
+        height: 500px;
+        width: 500px;
+      }
+      @include media-query-max(560px) {
+        height: 350px;
+        width: 350px;
+      }
+      @include media-query-max(430px) {
+        height: 250px;
+        width: 250px;
+      }
     }
   }
   section.credits {
