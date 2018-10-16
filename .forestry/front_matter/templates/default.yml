@@ -19,7 +19,6 @@ fields:
   hidden: false
   default: true
 pages:
-- content/comic/haunted-doll.md
 - content/comic/curiosity-killed-the-cat.md
 - content/comic/Struggle.md
 - content/comic/cinnamon.md
