@@ -4,3 +4,4 @@ draft = true
 title = "Haunted Doll"
 
 +++
+{{< comic src="haunted-doll.png" >}}

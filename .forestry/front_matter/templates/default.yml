@@ -19,6 +19,7 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/wholesome-zombie.md
 - content/comic/haunted-doll.md
 - content/comic/curiosity-killed-the-cat.md
 - content/comic/Struggle.md
