@@ -1,8 +1,11 @@
 [context.production.environment]
   HUGO_VERSION = "0.47"
+  command = "gulp build"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.47"
+  command = "gulp build"
 
 [context.branch-deploy]
   HUGO_VERSION = "0.47"
+  command = "gulp build"
