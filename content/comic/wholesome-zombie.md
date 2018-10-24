@@ -4,4 +4,4 @@ draft = true
 title = "Wholesome Zombie"
 
 +++
-{{< comic src="wholesome-zombie.png" >}}
+{{< comic src="wholesome-zombie.jpg" >}}
