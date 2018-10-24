@@ -37,7 +37,7 @@ gulp.task('convert', function() {
         return gmfile.setFormat('jpg');
       })
     )
-    .pipe(gulp.dest('static/img/comic'));
+    .pipe(gulp.dest('public/img/comic'));
 });
 
 
