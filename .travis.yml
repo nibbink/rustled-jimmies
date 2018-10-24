@@ -5,6 +5,6 @@ branches:
 before_script:
   - npm install -g gulp
 script:
-  - gulp build
+  - gulp convert
 notifications:
     slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
