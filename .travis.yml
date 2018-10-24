@@ -1,8 +1,10 @@
+sudo: required
 language: node_js
 branches:
   only:
     - master
 before_script:
+  - sudo apt-get install autoconf libtool nasm
   - npm install -g gulp
 script:
   - gulp build
