@@ -40,15 +40,22 @@ gulp.task('convert', function() {
     .pipe(gulp.dest('public/img/comic'));
 });
 
+// Move GIFs
+gulp.task('gif', function () {
+  return gulp
+    .src('assets/comic/*.gif')
+    .pipe(gulp.dest('public/img/comic'));
+});
+
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical','convert'], function () {
+gulp.task('watch', ['critical','convert', 'gif'], function () {
   gulp.watch('assets/css/critical.scss', ['critical']);
-  gulp.watch('assets/img/*', ['convert']);
+  gulp.watch('assets/img/*', ['convert', 'gif']);
 });
 
 // Run Watch as default
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['critical','convert']);
+gulp.task('build', ['critical','convert', 'gif']);
