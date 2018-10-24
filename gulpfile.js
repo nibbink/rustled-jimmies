@@ -1,18 +1,15 @@
-var gulp = require('gulp'),
-  autoprefixer = require('autoprefixer'),
-  cache = require('gulp-cache'),
-  concat = require('gulp-concat-util'),
-  cssnano = require('cssnano'),
-  gm = require('gulp-gm'),
-  imagemin = require('gulp-imagemin'),
-  imageminMozjpeg = require('imagemin-mozjpeg'),
-  postcss = require('gulp-postcss'),
-  rename = require('gulp-rename'),
-  sass = require('gulp-sass');
+const gulp = require('gulp'),
+      autoprefixer = require('autoprefixer'),
+      concat = require('gulp-concat-util'),
+      cssnano = require('cssnano'),
+      gm = require('gulp-gm'),
+      postcss = require('gulp-postcss'),
+      rename = require('gulp-rename'),
+      sass = require('gulp-sass');
 
 // Critical CSS
-gulp.task('critical', function() {
-  var plugins = [
+gulp.task('critical', () => {
+  const plugins = [
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
@@ -32,43 +29,22 @@ gulp.task('critical', function() {
 });
 
 // Image Conversion
-gulp.task('convert', function() {
-  return gulp
-    .src('assets/comic/*.png')
-    .pipe(
-      gm(function(gmfile) {
-        return gmfile.setFormat('jpg');
-      })
-    )
-    .pipe(gulp.dest('static/img/comic'));
-});
+gulp.task('convert', () => gulp
+  .src('assets/comic/*.png')
+  .pipe(
+    gm(gmfile => gmfile.setFormat('jpg'))
+  )
+  .pipe(gulp.dest('static/img/comic')));
 
-// Image Optimization
-gulp.task('optimize', function() {
-  return gulp
-    .src('assets/comic/*.jpg')
-    .pipe(
-      cache(
-        imagemin([
-          imageminMozjpeg({
-            quality: 99,
-            progressive: true
-          }),
-        ])
-      )
-    )
-    .pipe(gulp.dest('static/img/comic'));
-});
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical','convert','optimize'], function () {
+gulp.task('watch', ['critical','convert'], () => {
   gulp.watch('assets/css/critical.scss', ['critical']);
   gulp.watch('assets/img/*', ['convert']);
-  gulp.watch('assets/img/*', ['optimize']);
 });
 
 // Run Watch as default
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['critical','convert','optimize']);
+gulp.task('build', ['critical','convert']);
