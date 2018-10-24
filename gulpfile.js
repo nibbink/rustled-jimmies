@@ -40,7 +40,7 @@ gulp.task('convert', function() {
         return gmfile.setFormat('jpg');
       })
     )
-    .pipe(gulp.dest('static/comic'));
+    .pipe(gulp.dest('static/img/comic'));
 });
 
 // Image Optimization
@@ -57,7 +57,7 @@ gulp.task('optimize', function() {
         ])
       )
     )
-    .pipe(gulp.dest('static/comic'));
+    .pipe(gulp.dest('static/img/comic'));
 });
 
 // Watch asset folder for changes
