@@ -14,7 +14,7 @@ sections:
   label: Pages
   create: all
   match: "*"
-upload_dir: assets/img
+upload_dir: assets/comic
 public_path: "/comic"
 front_matter_path: ''
 use_front_matter_path: false
