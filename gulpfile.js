@@ -1,15 +1,15 @@
-const gulp = require('gulp'),
-      autoprefixer = require('autoprefixer'),
-      concat = require('gulp-concat-util'),
-      cssnano = require('cssnano'),
-      gm = require('gulp-gm'),
-      postcss = require('gulp-postcss'),
-      rename = require('gulp-rename'),
-      sass = require('gulp-sass');
+var gulp = require('gulp'),
+    autoprefixer = require('autoprefixer'),
+    concat = require('gulp-concat-util'),
+    cssnano = require('cssnano'),
+    gm = require('gulp-gm'),
+    postcss = require('gulp-postcss'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass');
 
 // Critical CSS
-gulp.task('critical', () => {
-  const plugins = [
+gulp.task('critical', function() {
+  var plugins = [
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
@@ -29,16 +29,20 @@ gulp.task('critical', () => {
 });
 
 // Image Conversion
-gulp.task('convert', () => gulp
-  .src('assets/comic/*.png')
-  .pipe(
-    gm(gmfile => gmfile.setFormat('jpg'))
-  )
-  .pipe(gulp.dest('static/img/comic')));
+gulp.task('convert', function() {
+  return gulp
+    .src('assets/comic/*.png')
+    .pipe(
+      gm(function(gmfile) {
+        return gmfile.setFormat('jpg');
+      })
+    )
+    .pipe(gulp.dest('static/img/comic'));
+});
 
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical','convert'], () => {
+gulp.task('watch', ['critical','convert'], function () {
   gulp.watch('assets/css/critical.scss', ['critical']);
   gulp.watch('assets/img/*', ['convert']);
 });
