@@ -5,7 +5,15 @@ var gulp = require('gulp'),
     gm = require('gulp-gm'),
     postcss = require('gulp-postcss'),
     rename = require('gulp-rename'),
+    replace = require('gulp-replace'),
     sass = require('gulp-sass');
+    
+// Replace
+gulp.task('replace', function() {
+  gulp.src(['public/index.xml'])
+    .pipe(replace('data-src', 'src'))
+    .pipe(gulp.dest('public/'));
+});
 
 // Critical CSS
 gulp.task('critical', function() {
@@ -49,7 +57,8 @@ gulp.task('gif', function () {
 
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical', 'convert', 'gif'], function () {
+gulp.task('watch', ['replace', 'critical', 'convert', 'gif'], function () {
+  gulp.watch('layouts/_default/rss.xml', ['replace']);
   gulp.watch('assets/css/reset.scss', ['critical']);
   gulp.watch('assets/css/fonts.scss', ['critical']);
   gulp.watch('assets/css/critical.scss', ['critical']);
@@ -60,4 +69,4 @@ gulp.task('watch', ['critical', 'convert', 'gif'], function () {
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['critical','convert', 'gif']);
+gulp.task('build', ['critical','convert','gif']);

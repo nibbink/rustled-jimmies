@@ -8,6 +8,8 @@ enableEmoji = "true"
 
 [author]
   name = "Sam Pratt"
+  dev = "Juan Villela"
+  devEmail = "hello@juanvillela.me"
 
 SectionPagesMenu = "main"
 
