@@ -121,7 +121,7 @@ main.comic-wrap {
       @extend %none;
       @include media-query-max(730px) {
         &:checked + .hamburger .top {
-          margin-top: 11px;
+          margin-top: 20px;
           -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
         }

@@ -33,18 +33,18 @@ html {
     figure {
       margin: 0;
       min-height: calc(100vh - 528px);
-    }
-    img {
-      width: auto;
+      img {
+        height: 100%;
+        max-height: 1740px;
+        width: 100%;
+        &:not([src]) {
+          visibility: hidden;
+        }
+      }
     }
     a {
       color: #2e2d2d;
       text-decoration: none;
-    }
-    figure img {
-      height: 100%;
-      max-height: 1740px;
-      width: 100%;
     }
     .desktop {
       @include media-query-max(730px) {

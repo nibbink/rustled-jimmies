@@ -37,19 +37,21 @@ gulp.task('convert', function() {
         return gmfile.setFormat('jpg');
       })
     )
-    .pipe(gulp.dest('public/img/comic'));
+    .pipe(gulp.dest('static/img/comic'));
 });
 
 // Move GIFs
 gulp.task('gif', function () {
   return gulp
     .src('assets/comic/*.gif')
-    .pipe(gulp.dest('public/img/comic'));
+    .pipe(gulp.dest('static/img/comic'));
 });
 
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical','convert', 'gif'], function () {
+gulp.task('watch', ['critical', 'convert', 'gif'], function () {
+  gulp.watch('assets/css/reset.scss', ['critical']);
+  gulp.watch('assets/css/fonts.scss', ['critical']);
   gulp.watch('assets/css/critical.scss', ['critical']);
   gulp.watch('assets/img/*', ['convert', 'gif']);
 });
