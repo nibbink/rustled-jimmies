@@ -1,4 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <feed>
+    <icon>{{ .Site.BaseURL }}favicon.png</icon>
+    <logo>{{ .Site.BaseURL }}avatar.png</logo>
+  </feed>
   <channel>
     <title>{{ .Site.Title }}</title>
     <link>{{ .Site.BaseURL }}</link>
@@ -12,14 +16,6 @@
     {{ with .OutputFormats.Get "RSS" }}
       {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
-    <image>
-      <url>{{ .Site.BaseURL }}rj-rss.jpg</url>
-      <title>{{ .Site.Title }}</title>
-      <link>{{ .Site.BaseURL }}</link>
-      <width>144</width>
-      <height>144</height>
-      <description>{{ .Site.Params.meta.description }}</description>
-    </image>
     {{ range .Data.Pages }}
     <item>
       <title>{{ .Title }}</title>
