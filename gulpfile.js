@@ -20,6 +20,7 @@ gulp.task('replace', function() {
     .pipe(replace('&lt;/div&gt;', ''))
     .pipe(replace('&lt;/section&gt;', ''))
     .pipe(replace(/\n\s*/g, ''))
+    .pipe(replace('&lt;/figure&gt;', '&lt;/figure&gt; &lt;a href=&#34;https://www.patreon.com/rustledjimmiescomic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src={{ &#34;/img/assets/patreon-banner.jpg&#34; | relURL }} alt=&#34;Patreon&#34;&gt;&lt;/a&gt;'))
     .pipe(gulp.dest('public/'));
 });
 
