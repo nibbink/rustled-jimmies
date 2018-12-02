@@ -12,6 +12,14 @@
     {{ with .OutputFormats.Get "RSS" }}
       {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
+    <image>
+      <url>{{ .Site.BaseURL }}rj-rss.jpg</url>
+      <title>{{ .Site.Title }}</title>
+      <link>{{ .Site.BaseURL }}</link>
+      <width>144</width>
+      <height>144</height>
+      <description>{{ .Site.Params.meta.description }}</description>
+    </image>
     {{ range .Data.Pages }}
     <item>
       <title>{{ .Title }}</title>
