@@ -12,6 +12,14 @@ var gulp = require('gulp'),
 gulp.task('replace', function() {
   gulp.src(['public/index.xml'])
     .pipe(replace('data-src', 'src'))
+    .pipe(replace(/(&lt;section)(.*)/g, ''))
+    .pipe(replace(/(&lt;input)(.*)/g, ''))
+    .pipe(replace(/(&lt;label)(.*)/g, ''))
+    .pipe(replace('&lt;div class=&#34;panel&#34;&gt;', ''))
+    .pipe(replace(/(&lt;img id=&#34;bonus&#34;)(.*)/g, ''))
+    .pipe(replace('&lt;/div&gt;', ''))
+    .pipe(replace('&lt;/section&gt;', ''))
+    .pipe(replace(/\n\s*/g, ''))
     .pipe(gulp.dest('public/'));
 });
 
@@ -69,4 +77,4 @@ gulp.task('watch', ['replace', 'critical', 'convert', 'gif'], function () {
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['critical','convert','gif']);
+gulp.task('build', ['critical', 'convert', 'gif']);
