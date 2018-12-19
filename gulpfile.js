@@ -1,16 +1,18 @@
-var gulp = require('gulp'),
-    autoprefixer = require('autoprefixer'),
-    concat = require('gulp-concat-util'),
-    cssnano = require('cssnano'),
-    gm = require('gulp-gm'),
-    postcss = require('gulp-postcss'),
-    rename = require('gulp-rename'),
-    replace = require('gulp-replace'),
-    sass = require('gulp-sass');
-    
+const gulp = require('gulp'),
+  autoprefixer = require('autoprefixer'),
+  concat = require('gulp-concat-util'),
+  cssnano = require('cssnano'),
+  gm = require('gulp-gm'),
+  postcss = require('gulp-postcss'),
+  rename = require('gulp-rename'),
+  replace = require('gulp-replace'),
+  sass = require('gulp-sass'),
+  plumber = require('gulp-plumber');
+
 // Replace
-gulp.task('replace', function() {
+gulp.task('replace', () => {
   gulp.src(['public/index.xml'])
+    .pipe(plumber())
     .pipe(replace('data-src', 'src'))
     .pipe(replace(/(&lt;section)(.*)/g, ''))
     .pipe(replace(/(&lt;input)(.*)/g, ''))
@@ -25,57 +27,63 @@ gulp.task('replace', function() {
 });
 
 // Critical CSS
-gulp.task('critical', function() {
-  var plugins = [
-    autoprefixer({browsers: ['last 2 version']}),
-    cssnano()
-  ];
-  return gulp.src('assets/css/critical.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(postcss(plugins))
-  // wrap with style tags
-  .pipe(concat.header('<style>'))
-  .pipe(concat.footer('</style>'))
-  // convert it to an include file
-  .pipe(rename({
-      basename: 'critical',
-      extname: '.html'
-    }))
-  // insert file
-  .pipe(gulp.dest('layouts/partials'));
+gulp.task('critical', () => {
+  const plugins = [autoprefixer({browsers: ['> 5%']}), cssnano()];
+  return (
+    gulp.src('assets/css/critical.scss')
+      .pipe(plumber())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(postcss(plugins))
+      // wrap with style tags
+      .pipe(concat.header('<style>'))
+      .pipe(concat.footer('</style>'))
+      // convert it to an include file
+      .pipe(
+        rename({
+          basename: 'critical',
+          extname: '.html',
+        })
+      )
+      // insert file
+      .pipe(gulp.dest('layouts/partials'))
+  );
 });
 
 // Image Conversion
-gulp.task('convert', function() {
-  return gulp
-    .src('assets/comic/*.png')
+gulp.task('convert', () => {
+  return (
+    gulp.src('assets/comic/*.png')
+    .pipe(plumber())
     .pipe(
       gm(function(gmfile) {
         return gmfile.setFormat('jpg');
       })
     )
-    .pipe(gulp.dest('static/img/comic'));
+    .pipe(gulp.dest('static/img/comic'))
+  );
 });
 
 // Move GIFs
-gulp.task('gif', function () {
-  return gulp
-    .src('assets/comic/*.gif')
-    .pipe(gulp.dest('static/img/comic'));
+gulp.task('gif', () => {
+  return (
+    gulp.src('assets/comic/*.gif')
+      .pipe(plumber())
+      .pipe(gulp.dest('static/img/comic'))
+  );
 });
 
 
 // Watch asset folder for changes
-gulp.task('watch', ['replace', 'critical', 'convert', 'gif'], function () {
-  gulp.watch('layouts/_default/rss.xml', ['replace']);
-  gulp.watch('assets/css/reset.scss', ['critical']);
-  gulp.watch('assets/css/fonts.scss', ['critical']);
-  gulp.watch('assets/css/critical.scss', ['critical']);
-  gulp.watch('assets/img/*', ['convert', 'gif']);
-});
+gulp.task('watch', gulp.parallel(['replace', 'critical', 'convert', 'gif'], () => {
+  gulp.watch('layouts/_default/rss.xml', gulp.parallel(['replace']));
+  gulp.watch('assets/css/reset.scss', gulp.parallel(['critical']));
+  gulp.watch('assets/css/fonts.scss', gulp.parallel(['critical']));
+  gulp.watch('assets/css/critical.scss', gulp.parallel(['critical']));
+  gulp.watch('assets/img/*', gulp.parallel(['convert', 'gif']));
+}));
 
 // Run Watch as default
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.series(['watch']));
 
 // Build
-gulp.task('build', ['critical', 'convert', 'gif']);
+gulp.task('build', gulp.parallel(['critical', 'convert', 'gif']));
