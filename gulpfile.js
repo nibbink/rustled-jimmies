@@ -1,17 +1,22 @@
-const gulp = require('gulp'),
-  autoprefixer = require('autoprefixer'),
-  concat = require('gulp-concat-util'),
-  cssnano = require('cssnano'),
-  gm = require('gulp-gm'),
-  postcss = require('gulp-postcss'),
-  rename = require('gulp-rename'),
-  replace = require('gulp-replace'),
-  sass = require('gulp-sass'),
-  plumber = require('gulp-plumber');
+
+"use strict";
+
+// Load Plugins
+const gulp = require('gulp');
+const autoprefixer = require('autoprefixer');
+const concat = require('gulp-concat-util');
+const cssnano = require('cssnano');
+const gm = require('gulp-gm');
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
 
 // Replace
-gulp.task('replace', () => {
-  gulp.src(['public/index.xml'])
+function clean() {
+    return gulp
+    .src(['public/index.xml'])
     .pipe(plumber())
     .pipe(replace('data-src', 'src'))
     .pipe(replace(/(&lt;section)(.*)/g, ''))
@@ -24,13 +29,13 @@ gulp.task('replace', () => {
     .pipe(replace(/\n\s*/g, ''))
     .pipe(replace('&lt;/figure&gt;', '&lt;/figure&gt; &lt;a href=&#34;https://www.patreon.com/rustledjimmiescomic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src={{ &#34;/img/assets/patreon-banner.jpg&#34; | relURL }} alt=&#34;Patreon&#34;&gt;&lt;/a&gt;'))
     .pipe(gulp.dest('public/'));
-});
+}
 
 // Critical CSS
-gulp.task('critical', () => {
+function critical() {
   const plugins = [autoprefixer({browsers: ['> 5%']}), cssnano()];
-  return (
-    gulp.src('assets/css/critical.scss')
+  return gulp
+      .src('assets/css/critical.scss')
       .pipe(plumber())
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss(plugins))
@@ -46,13 +51,12 @@ gulp.task('critical', () => {
       )
       // insert file
       .pipe(gulp.dest('layouts/partials'))
-  );
-});
+}
 
 // Image Conversion
-gulp.task('convert', () => {
-  return (
-    gulp.src('assets/comic/*.png')
+function convert() {
+  return gulp
+    .src('assets/comic/*.png')
     .pipe(plumber())
     .pipe(
       gm(function(gmfile) {
@@ -60,30 +64,35 @@ gulp.task('convert', () => {
       })
     )
     .pipe(gulp.dest('static/img/comic'))
-  );
-});
+}
 
 // Move GIFs
-gulp.task('gif', () => {
-  return (
-    gulp.src('assets/comic/*.gif')
+function gif() {
+  return gulp
+      .src('assets/comic/*.gif')
       .pipe(plumber())
       .pipe(gulp.dest('static/img/comic'))
-  );
-});
+}
 
 
 // Watch asset folder for changes
-gulp.task('watch', gulp.parallel(['replace', 'critical', 'convert', 'gif'], () => {
-  gulp.watch('layouts/_default/rss.xml', gulp.parallel(['replace']));
-  gulp.watch('assets/css/reset.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/fonts.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/critical.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/img/*', gulp.parallel(['convert', 'gif']));
-}));
+function watchFiles() {
+  gulp.watch('assets/css/reset.scss', critical);
+  gulp.watch('assets/css/fonts.scss', critical);
+  gulp.watch('assets/css/critical.scss', critical);
+  gulp.watch('assets/img/*', gulp.series(convert, gif));
+}
+
+// Tasks
+gulp.task("critical", critical);
+gulp.task("convert", gulp.series(convert, gif));
+gulp.task("clean", clean);
 
 // Run Watch as default
-gulp.task('default', gulp.series(['watch']));
+gulp.task("watch", watchFiles);
 
 // Build
-gulp.task('build', gulp.parallel(['critical', 'convert', 'gif']));
+gulp.task(
+  "build",
+  gulp.series(gulp.parallel(critical, convert, gif))
+);
