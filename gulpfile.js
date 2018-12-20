@@ -16,19 +16,10 @@ const plumber = require('gulp-plumber');
 // Replace
 function clean() {
     return gulp
-    .src(['public/index.xml'])
+    .src(['public/comic/feed.json'])
     .pipe(plumber())
-    .pipe(replace('data-src', 'src'))
-    .pipe(replace(/(&lt;section)(.*)/g, ''))
-    .pipe(replace(/(&lt;input)(.*)/g, ''))
-    .pipe(replace(/(&lt;label)(.*)/g, ''))
-    .pipe(replace('&lt;div class=&#34;panel&#34;&gt;', ''))
-    .pipe(replace(/(&lt;img id=&#34;bonus&#34;)(.*)/g, ''))
-    .pipe(replace('&lt;/div&gt;', ''))
-    .pipe(replace('&lt;/section&gt;', ''))
-    .pipe(replace(/\n\s*/g, ''))
-    .pipe(replace('&lt;/figure&gt;', '&lt;/figure&gt; &lt;a href=&#34;https://www.patreon.com/rustledjimmiescomic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src={{ &#34;/img/assets/patreon-banner.jpg&#34; | relURL }} alt=&#34;Patreon&#34;&gt;&lt;/a&gt;'))
-    .pipe(gulp.dest('public/'));
+    .pipe(replace(/(\\n\\r\\n\\r\\n\\r\\n\s+\\u003)(csection).+/g, '"'))
+    .pipe(gulp.dest('public/comic'));
 }
 
 // Critical CSS

@@ -25,7 +25,7 @@
         <img src={{ "/img/assets/twitter.svg" | relURL }} alt="Twitter icon">
       </a>
       {{end}}
-      <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" rel="noopener">
+      <a class="social-item" href="{{ .Site.BaseURL }}comic/feed.json" target="_blank" rel="noopener">
         <img src={{ "/img/assets/rss.svg" | relURL }} alt="RSS icon">
       </a>
       {{with .Site.Params.patreon}}

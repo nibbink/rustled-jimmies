@@ -14,7 +14,7 @@ enableEmoji = "true"
 SectionPagesMenu = "main"
 
 [permalinks]
-  archive = "/:comic/:title/"
+  section = "/:comic/:title/"
 
 [params.meta]
   keywords = "comic, webcomic, rustled jimmies"
@@ -26,8 +26,14 @@ SectionPagesMenu = "main"
   patreon = "rustledjimmiescomic"
   OpenLinksInNewWindow = true
 
+[outputFormats.jsonfeed]
+  mediaType = "application/json"
+  baseName = "feed"
+  isPlainText = true
+
 [outputs]
-  home = ["html", "rss"]
+  home = ["html"]
+  section = ["html", "jsonfeed"]
 
 [params.google.analytics]
     trackerID = "UA-69833960-2"

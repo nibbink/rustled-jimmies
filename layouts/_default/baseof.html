@@ -25,9 +25,9 @@
   <meta name="theme-color" content="#70B4D6">
 
   <!-- RSS -->
-  {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
+  <link
+  href="{{ .Site.BaseURL }}comic/feed.json"
+rel="alternate" type="application/json" title="{{ .Site.Title }}" />
 
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
