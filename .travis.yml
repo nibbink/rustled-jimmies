@@ -9,8 +9,8 @@ branches:
 before_install:
   - sudo apt-get update
 before_script:
-  - npm install -g gulp
+  - npm install
 script:
-  - gulp build
+  - gulp convert
 notifications:
 slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
