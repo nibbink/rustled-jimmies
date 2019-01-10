@@ -19,6 +19,7 @@ fields:
   hidden: false
   default: true
 pages:
+- content/comic/toxic.md
 - content/comic/creation.md
 - content/comic/cold-blooded.md
 - content/comic/gather-the-knights.md
