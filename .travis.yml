@@ -11,6 +11,6 @@ before_install:
 before_script:
   - npm install
 script:
-  - gulp convert
+  - gulp critical
 notifications:
 slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
