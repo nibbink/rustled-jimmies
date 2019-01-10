@@ -14,4 +14,4 @@ before_script:
 script:
   - gulp convert
 notifications:
-slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
+  slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
