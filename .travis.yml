@@ -8,8 +8,8 @@ branches:
     - master
 before_install:
   - sudo apt-get update
+  - sudo apt-get install libjpeg-dev libtiff5-dev libpng16-dev graphicsmagick
 before_script:
-  - bash gm-install.sh
   - npm install
 script:
   - gulp clean
