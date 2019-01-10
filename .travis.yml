@@ -1,5 +1,5 @@
 sudo: required
-dist: trusty
+dist: xenial
 language: node_js
 node_js:
   - "8.14.0"
@@ -9,8 +9,9 @@ branches:
 before_install:
   - sudo apt-get update
 before_script:
+  - bash gm-install.sh
   - npm install
 script:
-  - gulp critical
+  - gulp clean
 notifications:
 slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
