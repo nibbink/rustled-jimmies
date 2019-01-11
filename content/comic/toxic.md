@@ -1,6 +1,8 @@
 +++
-date = "01/01/2019 12:00 AM -0500"
 title = "Toxic"
-
+author = "Sam Pratt"
+date = "2019-01-01"
+draft = true
+showthedate = true
 +++
 {{< comic src="toxic.jpg" >}}

@@ -1,6 +1,8 @@
 +++
-date = "01/10/2019 12:00 AM -0500"
 title = "Little Timmy Gun Hands"
-
+author = "Sam Pratt"
+date = "2019-01-10"
+draft = true
+showthedate = true
 +++
 {{< comic src="little-timmy-gun-hands.gif" >}}
