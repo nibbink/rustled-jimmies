@@ -19,11 +19,5 @@
 }
 
 body {
-  font-family: sans-serif;
-}
-.fonts-loaded-1 body {
-  font-family: 'Sam Subset';
-}
-.fonts-loaded-2 body {
-  font-family: 'Sam';
+  font-family: 'Sam','Sam Subset',sans-serif;
 }

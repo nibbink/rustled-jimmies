@@ -8,7 +8,7 @@
     <label class="box" for="box"><img src={{ "/img/assets/bonus.svg" | relURL }} alt="Bonus comic button"></label>
     <!-- Panel -->  
     <div class="panel">
-      <img data-src="/img/comic/{{ .Get "src" }}" class="bonus lazy" alt="Bonus comic panel"/>
+      <img id="bonus" data-src="/img/comic/{{ .Get "src" }}" class="bonus lazy" alt="Bonus comic panel"/>
     </div>
   </section>
 {{ end }}

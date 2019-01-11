@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main class="comic-wrap">
+  {{ partial "header.html" . }}
+  <!-- Comic archive feed -->
+  <section class="content list">
+    <!-- Range by year -->
+    {{ range .Data.Pages.GroupByDate "2006" }}
+      <!-- Year -->
+      <h1 class="content-list-date">{{ .Key }}</h1>
+      <!-- Comic post -->
+      <div class="content-container">
+        {{ range .Pages }}
+          {{ .Render "li"}}
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
+  {{ partial "patreon.html" . }}
+  {{ partial "footer.html" . }}
+</main>
+{{ end }}

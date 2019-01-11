@@ -18,15 +18,16 @@
     {{ end }}
   </title>
   <meta name="author" content="{{ .Site.Author.name }}" />
+  <meta name="developer" content="{{ .Site.Author.dev }}" />
   <meta name="description" content="{{ .Site.Params.meta.description }}" />
   <meta name="keywords" content="{{ .Site.Params.meta.keywords }}" />
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
   <meta name="theme-color" content="#70B4D6">
 
   <!-- RSS -->
-  {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
+  <link
+  href="{{ .Site.BaseURL }}comic/feed.json"
+rel="alternate" type="application/json" title="{{ .Site.Title }}" />
 
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
@@ -35,47 +36,17 @@
   {{ end }}
   <base href="{{ .Site.BaseURL }}" />
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/icons/avatar.png" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/avatar.png" />
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/icons/avatar.png" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}/avatar.png" />
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
-  <link rel="preload" href={{ "fonts/Sam-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
   <link rel="preload" href={{ "fonts/Sam-subset.woff" | relURL }} as="font" type="font/woff" crossorigin>
+  <link rel="preload" href={{ "fonts/Sam-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
 
   <!-- Critical -->
   {{ partial "critical.html" . }}
-
-  <!-- Critical Font Loading -->
-  <script>
-      (function() {
-        "use strict";
-        // Optimization for Repeat Views
-        if( sessionStorage.fontsLoadedCriticalFoftPreloadFallback ) {
-          document.documentElement.className += " fonts-loaded-2";
-          return;
-        } else if( "fonts" in document ) {
-          document.fonts.load("1em Sam Subset").then(function () {
-            document.documentElement.className += " fonts-loaded-1";
-            Promise.all([
-              document.fonts.load("400 1em Sam")
-            ]).then(function () {
-              document.documentElement.className += " fonts-loaded-2";
-              // Optimization for Repeat Views
-              sessionStorage.fontsLoadedCriticalFoftPreloadFallback = true;
-            });
-          });
-        } else {
-          // use fallback
-          var ref = document.getElementsByTagName( "script" )[ 0 ];
-          var script = document.createElement( "script" );
-          script.src = "js/critical-fallback.js";
-          script.async = true;
-          ref.parentNode.insertBefore( script, ref );
-        }
-      })();
-      </script>
 
   <!-- Stylesheets -->
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify }}
@@ -85,7 +56,7 @@
   <link rel="manifest" href="{{ "/manifest.json" | relURL }}">
 
   <!-- Graphic Assets -->
-  <link rel="shortcut icon" href={{ "/icons/favicon.png" | relURL }}>
+  <link rel="shortcut icon" href={{ "/favicon.png" | relURL }}>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">

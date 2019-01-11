@@ -1,4 +1,4 @@
 <!-- Comic file -->
 <figure>
-  <img data-src="/img/comic/{{ .Get "src" }}" class="lazy" alt="{{ .Page.Title }}"/>
+  <img data-src="{{ .Site.BaseURL }}img/comic/{{ .Get "src" }}" class="lazy" alt="{{ .Page.Title }}"/>
 </figure>
