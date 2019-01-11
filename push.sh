@@ -13,6 +13,7 @@ commit_website_files() {
 }
 
 upload_files() {
+  git remote add origin https://fourjuaneight:23b76aa2e55b90f8e685e73b206bc7a38fc528fc@github.com/fourjuaneight/rustled-jimmies.git > /dev/null 2>&1
   git push origin HEAD:master --quiet --set-upstream
 }
 
