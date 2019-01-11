@@ -13,5 +13,6 @@ before_script:
   - npm install
 script:
   - gulp convert
+  - bash push.sh
 notifications:
   slack: fouroneeight:vfxEwuSTrSyus1D2YkhN1vle
