@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: master
+
+publish_mode: editorial_workflow
+
+media_folder: "assets/comic/"
+public_folder: "img/comic"
+
+collections:
+  - name: "Comics"
+    label: "Comics"
+    folder: "content/comic"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Show Date", name: "showthedate", widget: "boolean", default: true}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Body", name: "body", widget: "markdown", default: "/{/{/< comic src=/"/" />/}/}"}
