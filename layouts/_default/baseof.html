@@ -6,21 +6,19 @@
   <base href="{{ .Site.BaseURL }}">
   <!-- Variable Title. Will display current comic name as site title. -->
   <title>
-    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-    {{ if eq $url "/" }}
+    {{ if .IsHome }}
       {{ .Site.Title }}
     {{ else }}
       {{ if .Params.heading }}
-        {{ .Params.heading }}
+        {{ .Params.heading }} | Rustled Jimmies
       {{ else }}
-        {{ .Title }}
+        {{ .Title }} | Rustled Jimmies
       {{ end }}
     {{ end }}
   </title>
   <meta name="author" content="{{ .Site.Author.name }}" />
   <meta name="developer" content="{{ .Site.Author.dev }}" />
   <meta name="description" content="{{ .Site.Params.meta.description }}" />
-  <meta name="keywords" content="{{ .Site.Params.meta.keywords }}" />
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
   <meta name="theme-color" content="#70B4D6">
 
@@ -28,22 +26,16 @@
   <link
   href="{{ .Site.BaseURL }}comic/feed.json"
 rel="alternate" type="application/json" title="{{ .Site.Title }}" />
-
-  <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
   {{ if .RSSLink }}
   <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}"/>
   {{ end }}
-  <base href="{{ .Site.BaseURL }}" />
-  {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/avatar.png" />
-  {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/avatar.png" />
-  {{ template "_internal/schema.html" . }}
 
-  <!-- Fonts -->  
-  <link rel="preload" href={{ "fonts/Sam-subset.woff" | relURL }} as="font" type="font/woff" crossorigin>
-  <link rel="preload" href={{ "fonts/Sam-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
+  <!-- Fonts -->
+  {{ $sam2 := resources.Get "fonts/Sam.woff2" }}
+  <link rel="preload" href="{{ $sam2.RelPermalink }}" as="font" type="font/woff2" crossorigin>
+  {{ $sam := resources.Get "fonts/Sam.woff" }}
+  <link rel="preload" href="{{ $sam.RelPermalink }}" as="font" type="font/woff" crossorigin>
 
   <!-- Critical -->
   {{ partial "critical.html" . }}
@@ -53,50 +45,71 @@ rel="alternate" type="application/json" title="{{ .Site.Title }}" />
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
   <!-- Manifest -->
-  <link rel="manifest" href="{{ "/manifest.json" | relURL }}">
+  {{ $manifest := resources.Get "/manifest.json" }}
+  <link rel="manifest" href="{{ $manifest.Permalink }}">
 
-  <!-- Graphic Assets -->
-  <link rel="shortcut icon" href={{ "/favicon.png" | relURL }}>
+  <!-- Open Graph -->
+  <link rel="canonical" href="{{ .RelPermalink }}">
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ $avatar := resources.Get "icons/avatar.png" }}
+  <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
+  {{ template "_internal/opengraph.html" . }}
+  <meta property="og:image" content="{{ $avatar.RelPermalink }}">
+  {{ template "_internal/schema.html" . }}
+
+  <!-- Favicon -->
+  {{ $favicon := resources.Get "icons/favicon.png" }}
+  <link rel="shortcut icon" href="{{ $favicon.RelPermalink }}" i>
+
+  <!-- Webclip and Apple Touch Icon -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href={{ "/icons/apple-touch-icon-152x152.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="167x167" href={{ "/icons/apple-touch-icon-167x167.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="180x180" href={{ "/icons/apple-touch-icon-180x180.png" | relURL }}>
-  <link rel="mask-icon" color="#70B4D6" href={{ "/icons/safari-pinned-tab.svg" | relURL }}>
+  {{ $ati152 := resources.Get "icons/apple-touch-icon-152x152.png" }}
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ $ati152.RelPermalink }}">
+  {{ $ati167 := resources.Get "icons/apple-touch-icon-167x167.png" }}
+  <link rel="apple-touch-icon" sizes="167x167" href="{{ $ati167.RelPermalink }}">
+  {{ $ati180 := resources.Get "icons/apple-touch-icon-180x180.png" }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $ati180.RelPermalink }}">
+  {{ $spt := resources.Get "icons/safari-pinned-tab.svg" | minify }}
+  <link rel="mask-icon" color="#70B4D6" href="{{ $spt.RelPermalink }}">
 
-  <!-- Android Chrome Icon -->
-  <link rel="android-chrome" sizes="128x128" href="{{ "/icons/android-chrome-128x128.png" | relURL }}">
-  <link rel="android-chrome" sizes="192x192" href="{{ "/icons/android-chrome-192x192.png" | relURL }}">
-  <link rel="android-chrome" sizes="512x512" href="{{ "/icons/android-chrome-512x512.png" | relURL }}">
+  <!-- Icons -->
+  {{ $i128 := resources.Get "icons/icon-128x128.png" }}
+  <link rel="icon" sizes="128x128" href="{{ $i128.RelPermalink }}">
+  {{ $i192 := resources.Get "icons/icon-192x192.png" }}
+  <link rel="icon" sizes="192x192" href="{{ $i192.RelPermalink }}">
+  {{ $i512 := resources.Get "icons/icon-512x512.png" }}
+  <link rel="icon" sizes="512x512" href="{{ $i512.RelPermalink }}">
   
-  <!-- Analytics -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '{{ .Site.Params.google.analytics.trackerID }}', 'auto');
-    ga('send', 'pageview');
-  </script>
-  
-  <!-- AdSense -->
-  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "{{ .Site.Params.google.adsense.adClient }}",
-      enable_page_level_ads: true
-    });
-  </script> -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  {{ if hugo.Environment | eq "production" }}
+    {{ partial "analytics.html" . }}
+  {{ end }}
 </head>
 <body>
   <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
 
-  <!-- Scripts -->
-  {{ partial "scripts.html" . }}
+  <!-- SW -->
+  {{ $sw := resources.Get "sw.js" | minify }}
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register("{{ $sw.Permalink }}", { scope: "/" });
+      navigator.serviceWorker.ready.then(registration => {
+        console.log("SW Ready");
+      });
+      window.addEventListener("load", () => {
+        if (navigator.serviceWorker.controller) {
+          navigator.serviceWorker.controller.postMessage({ command: "trimCaches" });
+        }
+      });
+    }
+  </script>
+
+  <!-- Bundled JavaScript generated by Webpack -->
+  {{ $js := resources.Get "js/bundle.js" }}
+  <script src="{{ $js.RelPermalink }}"></script>
 </body>
 </html>
