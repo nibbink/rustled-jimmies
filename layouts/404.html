@@ -2,12 +2,21 @@
   <!-- 404 -->
   <main class="comic-wrap err-404">
     <!-- Link back home -->
-    <a href="{{ .Site.BaseURL }}" class="err-404-link"><img src={{ "/img/assets/previous.svg" | relURL }}><p>Home</p></a>
+    <a href="{{ .Site.BaseURL }}" class="err-404-link">
+      {{ $previous := resources.Get "img/previous.svg" | minify }}
+      <img data-src="{{ $previous.Permalink }}" alt="Back to homepage" class="lazy">
+      <p>Home</p>
+    </a>
     
     <!-- 404 Image -->
     <section class="err-404-img">
-        {{ $404 := resources.Get "img/404.png" }}
-      <img src={{ $404.Permalink }} alt="Oh... You're not supposed to be here...">
+      {{ $webp := resources.Get "img/404.webp" }}
+      {{ $img := resources.Get "img/404.png" }}
+      <picture class="img-wrap">
+        <source srcset="{{ $webp.Permalink }}" type="image/webp">
+        <source srcset="{{ $img.Permalink }}" type="image/png">
+        <img src="{{ $img.Permalink }}" alt="Oh... You're not supposed to be here..."/>
+      </picture>
     </section>
     
     <!-- Copyright -->    

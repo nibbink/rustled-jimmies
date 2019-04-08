@@ -72,7 +72,7 @@ main.comic-wrap {
           margin: 10px auto;
         }
         a.nav-item {
-          background: #fff url("/img/assets/line.svg") bottom center no-repeat;
+          background: #fff url("/img/line.svg") bottom center no-repeat;
           font-size: 32px;
           height: 32px;
           margin-bottom: 10px;
@@ -180,7 +180,7 @@ main.comic-wrap {
         transition: height .4s ease;
         width: 100%;
         a.nav-item,
-        div.social {
+        nav.social {
           margin: 0 0 0 auto;
           padding: 8px 0;
         }
@@ -189,7 +189,7 @@ main.comic-wrap {
           font-size: 28px;
           height: 44px;
         }
-        div.social {
+        nav.social {
           display: flex;
           a.social-item {
             height: 100%;
@@ -268,7 +268,7 @@ main.comic-wrap {
           }
         }
         a {
-          figure {
+          figure, picture {
             min-height: 170px;
             width: 200px;
             img {

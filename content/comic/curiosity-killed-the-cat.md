@@ -4,4 +4,4 @@ draft = false
 title = "Curiosity Killed The Cat"
 
 +++
-{{< comic src="curiosity-killed-the-cat.jpg" >}}
+{{< comic src="curiosity-killed-the-cat" type="jpg" >}}

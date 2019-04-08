@@ -6,4 +6,4 @@ draft = false
 showthedate = true
 +++
 
-{{< comic src="liebot.jpg" >}}
+{{< comic src="liebot" type="jpg" >}}

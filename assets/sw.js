@@ -1,5 +1,5 @@
 /* global self */
-(function () {
+(function() {
   const version = `v2`;
   const cacheName = `:rustledjimmies:`;
   const staticCacheName = `${version}${cacheName}static`;
@@ -7,26 +7,12 @@
   const imagesCacheName = `${cacheName}images`;
   const staticAssets = [
     `/`,
-    `/comic/`,
     `/offline/`,
     `/css/main.min.css`,
     `/fonts/Sam.woff`,
     `/fonts/Sam.woff2`,
     `/js/bundle.js`,
-    `/img/offline-glenn.svg`,
-    `/img/bonus.svg`,
-    `/img/first.svg`,
-    `/img/insta.svg`,
-    `/img/last.svg`,
-    `/img/line.svg`,
     `/img/logo.svg`,
-    `/img/next.svg`,
-    `/img/patreon-banner.jpg`,
-    `/img/patreon.svg`,
-    `/img/previous.svg`,
-    `/img/random.svg`,
-    `/img/rss.svg`,
-    `/img/twitter.svg`,
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation

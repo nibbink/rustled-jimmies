@@ -81,7 +81,7 @@ main.comic-wrap {
   footer {
     @extend %flex;
     @extend %flex-column;
-    div.social {
+    nav.social {
       @extend %flex;
       @extend %margin-horizontal-center;
       @extend %vertical-padding;

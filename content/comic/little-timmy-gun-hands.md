@@ -5,4 +5,4 @@ date = "2019-01-10"
 draft = true
 showthedate = true
 +++
-{{< comic src="little-timmy-gun-hands.gif" >}}
+{{< gif src="little-timmy-gun-hands.gif" >}}

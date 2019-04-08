@@ -1,4 +1,9 @@
-<!-- Comic file -->
-<figure>
-  <img data-src="{{ .Site.BaseURL }}img/comic/{{ .Get "src" }}" class="lazy" alt="{{ .Page.Title }}"/>
-</figure>
+{{/*  Shortcode takes in file name and type "extension". This is done to generate a JPEG/PNG and Webp file. HTML `picture` is used to dynamically load webp where supported or jpeg/png as a fallback. The lazy loading class and data-src attributes are added for lazy loading images.  */}}
+{{ $type := (print "." (.Get "type")) }}
+{{ $webp := resources.Get (print "img/comic/" (.Get "src") ".webp") }}
+{{ $img := resources.Get (print "img/comic/" (.Get "src") $type) }}
+<picture class="img-wrap">
+  <source data-srcset="{{ $webp.Permalink }}" type="image/webp">
+  <source data-srcset="{{ $img.Permalink }}" type="image/{{ $type }}">
+  <img data-src="{{ $img.Permalink }}" alt="{{ .Page.Title }}" class="lazy"/>
+</picture>

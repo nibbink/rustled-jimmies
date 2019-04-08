@@ -1,14 +1,22 @@
 <!-- Bonus panel -->
 {{ $bonus := .Get "src" }}
-{{ if ne "" $bonus  }}
+{{ if ne "" $bonus }}
   <section id="secret" class="secret" role="navigation">
     <!-- Toggle -->
     <input id="box" type="checkbox"/>
     <!-- Bonus icon -->
-    <label class="box" for="box"><img src={{ "/img/assets/bonus.svg" | relURL }} alt="Bonus comic button"></label>
-    <!-- Panel -->  
+    {{ $type := resources.Get "/img/bonus.svg" | minify }}
+    <label class="box" for="box"><img src={{ $type.Permalink }} alt="Bonus comic button"></label>
+    <!-- Panel -->
     <div class="panel">
-      <img id="bonus" data-src="/img/comic/{{ .Get "src" }}" class="bonus lazy" alt="Bonus comic panel"/>
+      {{ $type := (print "." (.Get "type")) }}
+      {{ $webp := resources.Get (print "img/comic/" (.Get "src") ".webp") }}
+      {{ $img := resources.Get (print "img/comic/" (.Get "src") $type) }}
+      <picture class="img-wrap">
+        <source data-srcset="{{ $webp.Permalink }}" type="image/webp">
+        <source data-srcset="{{ $img.Permalink }}" type="image/{{ $type }}">
+        <img data-src="{{ $img.Permalink }}" alt="Bonus comic panel" class="lazy bonus" id="bonus"/>
+      </picture>
     </div>
   </section>
 {{ end }}

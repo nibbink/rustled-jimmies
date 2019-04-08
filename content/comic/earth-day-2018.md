@@ -6,4 +6,4 @@ draft = false
 showthedate = true
 +++
 
-{{< comic src="earth-day-2018.jpg" >}}
+{{< comic src="earth-day-2018" type="jpg" >}}

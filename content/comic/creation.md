@@ -4,4 +4,4 @@ draft = false
 title = "Creation"
 
 +++
-{{< comic src="creation.jpg" >}}
+{{< comic src="creation" type="jpg" >}}

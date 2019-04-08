@@ -5,7 +5,13 @@
   <a href="https://www.patreon.com/{{.}}" target="_blank" rel="noopener">
     <p class="visually-hidden">Patreon</p>
     <!-- Banner image -->
-    <img data-src={{ "/img/assets/patreon-banner.jpg" | relURL }} class="lazy" alt="Patreon">
+    {{ $webp := resources.Get "img/patreon-banner.webp" }}
+    {{ $img := resources.Get "img/patreon-banner.jpg" }}
+    <picture class="img-wrap">
+      <source data-srcset="{{ $webp.Permalink }}" type="image/webp">
+      <source data-srcset="{{ $img.Permalink }}" type="image/jpg">
+      <img data-src="{{ $img.Permalink }}" alt="Support me on Patreon" class="lazy"/>
+    </picture>
   </a>
   {{end}}
 </section>

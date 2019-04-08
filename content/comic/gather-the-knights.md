@@ -5,6 +5,6 @@ showthedate = true
 title = "Gather The Knights"
 
 +++
-{{< comic src="gather-the-knights.jpg" >}}
+{{< comic src="gather-the-knights" type="jpg" >}}
 
-{{< bonus src="gather-the-knights-bonus-panel.jpg" >}}
+{{< bonus src="gather-the-knights-bonus-panel" type="jpg" >}}

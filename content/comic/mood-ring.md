@@ -6,4 +6,4 @@ draft = false
 showthedate = true
 +++
 
-{{< comic src="mood-ring.jpg" >}}
+{{< comic src="mood-ring" type="jpg" >}}

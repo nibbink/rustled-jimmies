@@ -1,34 +1,15 @@
 <!-- Footer -->
 <footer>
   <!-- Social Icons -->
-  <div class="social">
-    {{with .Site.Params.instagram}}
-    <a class="social-item" href="https://www.instagram.com/{{.}}" target="_blank" title="Follow me on Instagram" rel="noopener">
-      <img data-src={{ "/img/assets/insta.svg" | relURL }} alt="Instagram icon" class="lazy">
-    </a>
-    {{end}}
-    {{with .Site.Params.twitter}}
-    <a class="social-item" href="https://www.twitter.com/{{.}}" target="_blank" title="Follow me on Twitter" rel="noopener">
-      <img data-src={{ "/img/assets/twitter.svg" | relURL }} alt="Twitter icon" class="lazy">
-    </a>
-    {{end}}
-    <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed" rel="noopener">
-      <img data-src={{ "/img/assets/rss.svg" | relURL }} alt="RSS icon" class="lazy">
-    </a>
-    {{with .Site.Params.patreon}}
-    <a class="social-item" href="https://www.patreon.com/{{.}}" target="_blank" title="Support me through Patreon" rel="noopener">
-      <img data-src={{ "/img/assets/patreon.svg" | relURL }} alt="Patreon icon" class="lazy">
-    </a>
-    {{end}}
-  </div>
+  {{ partial "social.html" . }}
   
   <!-- Navbar -->
   <nav class="footer-nav">
-    <a class="footer-item" href="/comic">Comic</a>
+    <a class="footer-item" href='{{ "/comic" | relURL }}'>Comic</a>
     <p>&nbsp;&bull;&nbsp;</p>
-    <a class="footer-item" href="/about">About</a>
+    <a class="footer-item" href='{{ "/about" | relURL }}'>About</a>
     <p>&nbsp;&bull;&nbsp;</p>
-    <a class="footer-item" href="https://rustledjimmies.threadless.com" target="_blank" rel="noopener">Shop</a>
+    <a class="footer-item" href="https://rustledjimmies.threadless.com" target="_blank" rel="noreferrer noopener">Shop</a>
   </nav>
 
   <!-- Credits -->
