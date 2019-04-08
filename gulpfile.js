@@ -58,18 +58,18 @@ function toJPEG() {
         return gmfile.setFormat('jpg');
       })
     )
-    .pipe(gulp.dest('static/img/comic'))
+    .pipe(gulp.dest('assets/img'))
 }
 function toWebp() {
   return gulp
-    .src('assets/img/*.jpg')
+    .src('assets/comic/*.png')
     .pipe(plumber())
     .pipe(
       gm(function(gmfile) {
         return gmfile.setFormat('webp');
       })
     )
-    .pipe(gulp.dest('assets/img/comic'));
+    .pipe(gulp.dest('assets/img'));
 }
 
 // Move GIFs
@@ -77,7 +77,7 @@ function gif() {
   return gulp
       .src('assets/comic/*.gif')
       .pipe(plumber())
-      .pipe(gulp.dest('static/img/comic'))
+      .pipe(gulp.dest('assets/img'))
 }
 
 /*

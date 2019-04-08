@@ -1,13 +1,4 @@
 @font-face {
-  font-family: 'Sam Subset';
-  font-weight: 400;
-  font-style: normal;
-  src: local(Sam-subset),
-       local(Sam-subset),
-       url("fonts/Sam-subset.woff2") format("woff2"),
-       url("fonts/Sam-subset.woff") format("woff");
-}
-@font-face {
   font-display: swap;
   font-family: 'Sam';
   font-weight: 400;
@@ -19,5 +10,5 @@
 }
 
 body {
-  font-family: 'Sam','Sam Subset',sans-serif;
+  font-family: 'Sam', sans-serif;
 }

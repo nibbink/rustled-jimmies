@@ -57,6 +57,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-strip-comments": "^2.5.2",
     "imagemin-mozjpeg": "^8.0.0",

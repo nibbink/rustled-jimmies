@@ -1,44 +1,47 @@
+/* global self */
 (function () {
-  const version = 'v1';
-  const cacheName = ':rustledjimmies:';
+  const version = `v2`;
+  const cacheName = `:rustledjimmies:`;
   const staticCacheName = `${version}${cacheName}static`;
   const pagesCacheName = `${cacheName}pages`;
   const imagesCacheName = `${cacheName}images`;
   const staticAssets = [
-    '/',
-    '/comic/',
-    '/offline/',
-    '/css/main.min.css',
-    '/fonts/Sam.woff',
-    '/fonts/Sam.woff2',
-    '/fonts/Sam-subset.woff',
-    '/fonts/Sam-subset.woff2',
-    '/js/critical-fallback.js',
-    '/img/offline-glenn.svg',
-    '/img/assets/bonus.svg',
-    '/img/assets/first.svg',
-    '/img/assets/insta.svg',
-    '/img/assets/last.svg',
-    '/img/assets/line.svg',
-    '/img/assets/logo.svg',
-    '/img/assets/next.svg',
-    '/img/assets/patreon-banner.jpg',
-    '/img/assets/patreon.svg',
-    '/img/assets/previous.svg',
-    '/img/assets/random.svg',
-    '/img/assets/rss.svg',
-    '/img/assets/twitter.svg',
+    `/`,
+    `/comic/`,
+    `/offline/`,
+    `/css/main.min.css`,
+    `/fonts/Sam.woff`,
+    `/fonts/Sam.woff2`,
+    `/js/bundle.js`,
+    `/img/offline-glenn.svg`,
+    `/img/bonus.svg`,
+    `/img/first.svg`,
+    `/img/insta.svg`,
+    `/img/last.svg`,
+    `/img/line.svg`,
+    `/img/logo.svg`,
+    `/img/next.svg`,
+    `/img/patreon-banner.jpg`,
+    `/img/patreon.svg`,
+    `/img/previous.svg`,
+    `/img/random.svg`,
+    `/img/rss.svg`,
+    `/img/twitter.svg`,
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation
     return caches.open(staticCacheName).then(cache => {
       return cache.addAll(
-        staticAssets.map(url => new Request(url, {credentials: 'include'}))
+        staticAssets.map(url => {
+          return new Request(url, { credentials: `include` });
+        })
       );
     });
   }
   function stashInCache(name, request, response) {
-    caches.open(name).then(cache => cache.put(request, response));
+    caches.open(name).then(cache => {
+      return cache.put(request, response);
+    });
   }
   // Limit the number of items in a specified cache.
   function trimCache(name, maxItems) {
@@ -55,31 +58,43 @@
     return caches.keys().then(keys => {
       return Promise.all(
         keys
-          .filter(key => key.indexOf(version) !== 0)
-          .map(key => caches.delete(key))
+          .filter(key => {
+            return key.indexOf(version) !== 0;
+          })
+          .map(key => {
+            return caches.delete(key);
+          })
       );
     });
   }
   // Events!
-  self.addEventListener('message', event => {
-    if (event.data.command === 'trimCaches') {
+  self.addEventListener(`message`, event => {
+    if (event.data.command === `trimCaches`) {
       trimCache(pagesCacheName, 35);
       trimCache(imagesCacheName, 20);
     }
   });
-  self.addEventListener('install', event => {
-    event.waitUntil(updateStaticCache().then(() => self.skipWaiting()));
+  self.addEventListener(`install`, event => {
+    event.waitUntil(
+      updateStaticCache().then(() => {
+        return self.skipWaiting();
+      })
+    );
   });
-  self.addEventListener('activate', event => {
-    event.waitUntil(clearOldCaches().then(() => self.clients.claim()));
+  self.addEventListener(`activate`, event => {
+    event.waitUntil(
+      clearOldCaches().then(() => {
+        return self.clients.claim();
+      })
+    );
   });
-  self.addEventListener('fetch', event => {
-    const {request} = event;
+  self.addEventListener(`fetch`, event => {
+    const { request } = event;
     const url = new URL(request.url);
-    if (url.href.indexOf('https://www.rustledjimmies.net') !== 0) return;
-    if (request.method !== 'GET') return;
-    if (url.href.indexOf('?') !== -1) return;
-    if (request.headers.get('Accept').includes('text/html')) {
+    if (url.href.indexOf(`https://www.rustledjimmies.net`) !== 0) return;
+    if (request.method !== `GET`) return;
+    if (url.href.indexOf(`?`) !== -1) return;
+    if (request.headers.get(`Accept`).includes(`text/html`)) {
       event.respondWith(
         fetch(request)
           .then(response => {
@@ -96,9 +111,9 @@
           })
           .catch(() => {
             // CACHE or FALLBACK
-            return caches
-              .match(request)
-              .then(response => response || caches.match('/offline/'));
+            return caches.match(request).then(response => {
+              return response || caches.match(`/offline/`);
+            });
           })
       );
       return;
@@ -106,7 +121,7 @@
     event.respondWith(
       fetch(request)
         .then(response => {
-          if (request.headers.get('Accept').includes('image')) {
+          if (request.headers.get(`Accept`).includes(`image`)) {
             const copy = response.clone();
             stashInCache(imagesCacheName, request, copy);
           }
@@ -115,7 +130,9 @@
         .catch(() => {
           return caches
             .match(request)
-            .then(response => response)
+            .then(response => {
+              return response;
+            })
             .catch(console.error);
         })
     );
