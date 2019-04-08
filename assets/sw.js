@@ -12,7 +12,7 @@
     `/fonts/Sam.woff`,
     `/fonts/Sam.woff2`,
     `/js/bundle.js`,
-    `/img/logo.svg`,
+    `/img/logo.min.svg`,
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation
