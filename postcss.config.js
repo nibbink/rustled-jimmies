@@ -1,19 +1,12 @@
-let config = {
-  use: [
-    'postcss-cssnext',
-    'postcss-import',
-    'postcss-custom-properties',
-    'postcss-nesting',
-    'postcss-calc',
-  ],
-  'autoprefixer': {
-    browsers: '> 5%'
-  },
-  'postcssCssnext': {
-    features: {
-      autoprefixer: true
-    }
-  },
-};
-
-module.exports = config;
+module.exports = ({}) => ({
+  plugins: {
+    'autoprefixer': {browsers: ['> 5%']},
+    'cssnano': {preset: 'default'},
+    'postcss-calc': {},
+    'postcss-custom-properties': {},
+    'postcss-import': {},
+    'postcss-mixins': {},
+    'postcss-nested': {},
+    'postcss-simple-vars': {},
+  }
+})
