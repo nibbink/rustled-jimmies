@@ -1,5 +1,5 @@
 {{/*  The lazy loading class and data-src attributes are added for lazy loading images.  */}}
 {{ $img := resources.Get (print "img/comic/" (.Get "src")) }}
 <figure class="img-wrap">
-  <img data-src="{{ $img.RelPermalink }}" alt="{{ .Page.Title }}" class="lazy"/>
+  <img src="{{ $img.RelPermalink }}" alt="{{ .Page.Title }}"/>
 </figure>
