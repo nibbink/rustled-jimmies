@@ -5,4 +5,4 @@ author: Sam Pratt
 showthedate: false
 draft: false
 ---
-{{< comic src="toxic-potion-comic-small" type="jpg" >}}
+{{< comic src="toxic-potion-comic-small" type="png" >}}
