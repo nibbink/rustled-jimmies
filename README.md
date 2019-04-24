@@ -1,4 +1,7 @@
 # Rustled Jimmies
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/950a833d-28c6-405c-b153-426a1de7e1ae/deploy-status)](https://app.netlify.com/sites/rustledjimmies/deploys)
+
 A comic featuring plump lil dudes with cute butts created by Sam Pratt.
 
 ## Colophon
