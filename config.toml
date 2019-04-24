@@ -1,4 +1,4 @@
-baseURL = "https://www.rustledjimmies.net/"
+baseURL = "https://rustledjimmies.net/"
 languageCode = "en-us"
 title = "Rustled Jimmies"
 copyright = "Rustled Jimmies"
@@ -14,7 +14,7 @@ enableEmoji = "true"
 SectionPagesMenu = "main"
 
 [permalinks]
-  section = "/:comic/:title/"
+  section = "/comic/:filename/"
 
 [params.meta]
   keywords = "comic, webcomic, rustled jimmies"
@@ -36,7 +36,7 @@ SectionPagesMenu = "main"
   section = ["html", "jsonfeed"]
 
 [params.google.analytics]
-    trackerID = "UA-69833960-2"
-    
+  trackerID = "UA-69833960-2"
+
 [params.google.adsense]
-    adClient = "ca-pub-7275536170568967"
+  adClient = "ca-pub-7275536170568967"
