@@ -1,8 +1,8 @@
-+++
-title = "Toxic"
-author = "Sam Pratt"
-date = "2019-01-01"
-draft = true
-showthedate = true
-+++
-{{< comic src="toxic" type="jpg" >}}
+---
+title: Toxic
+date: '2018-12-17'
+author: Sam Pratt
+showthedate: true
+draft: false
+---
+{{< comic src="toxic-potion-comic-small" type="jpg" >}}
