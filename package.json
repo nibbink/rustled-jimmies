@@ -7,7 +7,7 @@
     "build": "gulp build --max_old_space_size=8000; hugo --environment=production; gulp clean",
     "build-dev": "gulp build --max_old_space_size=8000; hugo --environment=development; gulp clean",
     "clean": "rm -rf public resources",
-    "clean-node": "rm -rf node_modules package-lock.json",
+    "clean-node": "rm -rf node_modules",
     "develop-gulp": "gulp build; gulp watch",
     "develop-hugo": "hugo; hugo serve",
     "fix": "eslint --fix assets/**/*.js",

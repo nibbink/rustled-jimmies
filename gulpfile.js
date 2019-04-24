@@ -129,5 +129,5 @@ gulp.task("watch", watchFiles);
 // Build
 gulp.task(
   "build",
-  gulp.series(gulp.parallel(critical, webpack))
+  gulp.series(gulp.parallel(critical, toJPEG, toWebp, gif, webpack))
 );
