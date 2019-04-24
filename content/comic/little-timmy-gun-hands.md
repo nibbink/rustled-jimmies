@@ -5,4 +5,4 @@ author: Sam Pratt
 showthedate: true
 draft: false
 ---
-{{< comic src="ltgh-1.gif" type="-gif" >}}
+{{< comic src="ltgh-1-gif" type=".gif" >}}
