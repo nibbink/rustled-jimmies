@@ -6,5 +6,5 @@ draft = false
 showthedate = true
 +++
 
-{{< comic src="" >}}
-{{< bonus src="" >}}
+{{< comic src="" type="" >}}
+{{< bonus src="" type="" >}}
