@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: fourjuaneight/rustled-jimmies
+  repo: nibbink/rustled-jimmies
 
 publish_mode: editorial_workflow
 

@@ -9,5 +9,36 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    CMS.registerEditorComponent({
+      // Internal id of the component
+      id: 'comic',
+      // Visible label
+      label: 'Comic Shortcode',
+      // Fields the user need to fill out when adding an instance of the component
+      fields: [{ name: 'id', label: 'Comic path', widget: 'string' }],
+      // Pattern to identify a block as being an instance of this component
+      pattern: /^comic (\S+)$/,
+      // Function to extract data elements from the regexp match
+      fromBlock(match) {
+        return {
+          id: match[1],
+        };
+      },
+      // Function to create a text block from an instance of this component
+      toBlock(obj) {
+        const name = (obj.id).replace(/(.png|.jpg|.gif)/, "");
+        const ext = (obj.id).match(/(png|jpg|.gif)/);
+        return `{{< comic src="${name}" type="${ext[1]}" >}}`;
+      },
+      // Preview output for this component. Can either be a string or a React component
+      // (component gives better render performance)
+      toPreview(obj) {
+        const name = (obj.id).replace(/(.png|.jpg|.gif)/, "");
+        const ext = (obj.id).match(/(png|jpg)/);
+        return `{{< comic src="${name}" type="${ext[1]}" >}}`;
+      },
+    });
+  </script>
 </body>
 </html>

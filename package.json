@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://fourjuaneight@github.com/fourjuaneight/rustled-jimmies.git"
+    "url": "git+https://nibbink@github.com/nibbink/rustled-jimmies.git"
   },
   "author": "Sam Pratt",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fourjuaneight/rustled-jimmies/issues"
+    "url": "https://github.com/nibbink/rustled-jimmies/issues"
   },
-  "homepage": "https://github.com/fourjuaneight/rustled-jimmies#readme",
+  "homepage": "https://github.com/nibbink/rustled-jimmies#readme",
   "engines": {
     "node": "10.15.1"
   },
