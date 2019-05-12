@@ -8,8 +8,9 @@ enableEmoji = "true"
 
 [author]
   name = "Sam Pratt"
+  email = "spratt98@ymail.com"
   dev = "Juan Villela"
-  devEmail = "hello@juanvillela.me"
+  devsite = "https://www.juanvillela.dev/"
 
 SectionPagesMenu = "main"
 

@@ -14,6 +14,8 @@
 
   <!-- Credits -->
   <section class="credits">
-    <p class="copy">Copyright {{ dateFormat "2006" now }} {{ .Site.Copyright }}</p>
+    <p class="copy">Copyright {{ dateFormat "2006" now }} &bull; {{ .Site.Copyright }}</p>
+    <p class="separator">&vert;</p>
+    <p class="copy-sub">Made with <a href="https://gohugo.io/" class="hugo">Hugo</a> by <a href="{{ .Site.Author.devsite }}" target="_blank" rel="noopener">{{ .Site.Author.dev }}</a></a></p>
   </section>
 </footer>

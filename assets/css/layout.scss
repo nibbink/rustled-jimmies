@@ -115,15 +115,41 @@ main.comic-wrap {
       }
     }
     section.credits {
+      @extend %content-center;
       @extend %flex;
-      @extend %flex-column;
-      p.copy {
-        font-size: 28px;
-        margin: 0;
+      @extend %items-center;
+      @include media-query-max(625px) {
+        flex-direction: column-reverse;
+      }
+      p.copy,
+      p.copy-sub {
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0 5px;
         padding: 7px 0;
         text-align: center;
-        @include media-query-max(730px) {
+        @include media-query-max(625px) {
+          margin: 5px 0;
+        }
+      }
+      p.copy {
+        @include media-query-max(625px) {
           font-size: 22px;
+        }
+      }
+      p.separator {
+        font-size: 22px;
+        line-height: 22px;
+        @include media-query-max(625px) {
+          display: none;
+        }
+      }
+      p.copy-sub {
+        @include media-query-max(625px) {
+          font-size: 20px;
+        }
+        a {
+          color: #ff6ee0;
         }
       }
     }
