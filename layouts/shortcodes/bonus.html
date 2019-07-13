@@ -6,7 +6,7 @@
     <input id="box" type="checkbox"/>
     <!-- Bonus icon -->
     {{ $type := resources.Get "/img/bonus.svg" | minify }}
-    <label class="box" for="box"><img src={{ $type.Permalink }} alt="Bonus comic button"></label>
+    <label class="box" for="box"><img data-src={{ $type.Permalink }} alt="Bonus comic button" class="lazy"></label>
     <!-- Panel -->
     <div class="panel">
       {{ $type := (print "." (.Get "type")) }}

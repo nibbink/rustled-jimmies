@@ -3,7 +3,7 @@
 {{ $webp := resources.Get (print "img/comic/" (.Get "src") ".webp") }}
 {{ $img := resources.Get (print "img/comic/" (.Get "src") $type) }}
 <picture class="img-wrap">
-  <source srcset="{{ $webp.Permalink }}" type="image/webp">
-  <source srcset="{{ $img.Permalink }}" type="image/{{ $type }}">
-  <img src="{{ $img.Permalink }}" alt="{{ .Page.Title }}"/>
+  <source data-srcset="{{ $webp.Permalink }}" type="image/webp">
+  <source data-srcset="{{ $img.Permalink }}" type="image/{{ $type }}">
+  <img data-src="{{ $img.Permalink }}" alt="{{ .Page.Title }}" class="lazy"/>
 </picture>

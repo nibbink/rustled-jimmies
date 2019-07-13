@@ -13,9 +13,9 @@
       {{ $webp := resources.Get "img/404.webp" }}
       {{ $img := resources.Get "img/404.png" }}
       <picture class="img-wrap">
-        <source srcset="{{ $webp.Permalink }}" type="image/webp">
-        <source srcset="{{ $img.Permalink }}" type="image/png">
-        <img src="{{ $img.Permalink }}" alt="Oh... You're not supposed to be here..."/>
+        <source data-srcset="{{ $webp.Permalink }}" type="image/webp">
+        <source data-srcset="{{ $img.Permalink }}" type="image/png">
+        <img data-src="{{ $img.Permalink }}" alt="Oh... You're not supposed to be here..."/ class="lazy">
       </picture>
     </section>
     
