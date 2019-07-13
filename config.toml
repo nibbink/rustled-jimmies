@@ -24,7 +24,7 @@ SectionPagesMenu = "main"
 [params]
   twitter = "_rustledjimmies"
   instagram = "rustledjimmiescomic"
-  patreon = "rustledjimmiescomic"
+  patreon = "nibbink"
   OpenLinksInNewWindow = true
 
 [outputFormats.jsonfeed]
