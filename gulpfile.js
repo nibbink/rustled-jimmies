@@ -95,9 +95,10 @@ const optimize = cb => {
 const feed = cb => {
   return pump(
     [
-      src('public/comic/feed.json'),
+      src(['public/comic/feed.json', 'public/comic/index.xml']),
       htmlmin({ collapseWhitespace: true }),
       replace(/(\\n\\r\\n\\r\\n\\r\\n\s+\\u003)(csection).+/g, '"'),
+      replace(/data-/g, ''),
       replace(/<p><\/p>/g, ''),
       dest('public/comic'),
     ],

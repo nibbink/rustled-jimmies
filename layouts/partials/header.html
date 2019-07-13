@@ -9,8 +9,8 @@
   <section class="nav-bar desktop">
     <!-- Navbar -->
     <nav class="nav-menu">
-      <a class="nav-item" href='{{ "/comic" | relURL }}'>Comic</a>
-      <a class="nav-item" href='{{ "/about" | relURL }}'>About</a>
+      <a class="nav-item" href='{{ "/comic" | absURL }}'>Comic</a>
+      <a class="nav-item" href='{{ "/about" | absURL }}'>About</a>
       <a class="nav-item" href="https://rustledjimmies.threadless.com" target="_blank" rel="noreferrer noopener">Shop</a>
     </nav>
   
@@ -26,8 +26,8 @@
   </label>
 
   <nav id="menu" class="nav-menu mobile">
-      <a class="nav-item" href='{{ "/comic" | relURL }}'>Comic</a>
-      <a class="nav-item" href='{{ "/about" | relURL }}'>About</a>
+      <a class="nav-item" href='{{ "/comic" | absURL }}'>Comic</a>
+      <a class="nav-item" href='{{ "/about" | absURL }}'>About</a>
     <a class="nav-item" href="https://rustledjimmies.threadless.com" target="_blank" rel="noreferrer noopener">Shop</a>
     {{ partial "social.html" . }}
   </nav>

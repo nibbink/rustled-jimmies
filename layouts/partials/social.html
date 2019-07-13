@@ -11,7 +11,7 @@
     <img data-src="{{ $twitter.Permalink }}" alt="Twitter icon" class="lazy">
   </a>
   {{end}}
-  <a class="social-item" href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe to the feed" rel="noreferrer noopener">
+  <a class="social-item" href='{{ "comic/index.xml" | absURL }}' target="_blank" title="Subscribe to the feed" rel="noreferrer noopener">
     {{ $rss := resources.Get "img/rss.svg" | minify }}
     <img data-src="{{ $rss.Permalink }}" alt="RSS icon" class="lazy">
   </a>

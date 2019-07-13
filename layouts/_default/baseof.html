@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   <meta charset="utf-8" />
   <base href="{{ .Site.BaseURL }}">
   <!-- Variable Title. Will display current comic name as site title. -->
-  <title>
-    {{ if .IsHome }}
-      {{ .Site.Title }}
-    {{ else }}
-      {{ if .Params.heading }}
-        {{ .Params.heading }} | Rustled Jimmies
-      {{ else }}
-        {{ .Title }} | Rustled Jimmies
-      {{ end }}
-    {{ end }}
-  </title>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="author" content="{{ .Site.Author.name }}" />
   <meta name="developer" content="{{ .Site.Author.dev }} - {{ .Site.Author.devsite }}" />
   <meta name="description" content="{{ .Site.Params.meta.description }}" />
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
   <meta name="theme-color" content="#70B4D6">
+  <link rel="canonical" href="{{ .Permalink }}">
 
   <!-- RSS -->
-  <link
-  href="{{ .Site.BaseURL }}comic/feed.json"
-rel="alternate" type="application/json" title="{{ .Site.Title }}" />
-  <link rel="canonical" href="{{ .Permalink }}">
-  {{ if .RSSLink }}
-  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}"/>
-  {{ end }}
+  <link href='{{ "comic/index.xml" | absURL }}' rel="feed" type="application/rss+xml" title="{{ .Site.Title }}"/>
+  <link href='{{ "comic/feed.json" | absURL }}' rel="alternate" type="application/json" title="{{ .Site.Title }}" />
 
   <!-- Fonts -->
   {{ $sam2 := resources.Get "fonts/Sam.woff2" }}

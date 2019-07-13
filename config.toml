@@ -27,14 +27,20 @@ SectionPagesMenu = "main"
   patreon = "nibbink"
   OpenLinksInNewWindow = true
 
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 [outputFormats.jsonfeed]
   mediaType = "application/json"
   baseName = "feed"
   isPlainText = true
+  suffix = "json"
 
 [outputs]
   home = ["html"]
-  section = ["html", "jsonfeed"]
+  section = ["html", "jsonfeed", "rss"]
 
 [params.google.analytics]
   trackerID = "UA-69833960-2"
