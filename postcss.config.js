@@ -1,12 +1,14 @@
-module.exports = ({}) => ({
-  plugins: {
-    'autoprefixer': {browsers: ['> 5%']},
-    'cssnano': {preset: 'default'},
-    'postcss-calc': {},
-    'postcss-custom-properties': {},
-    'postcss-import': {},
-    'postcss-mixins': {},
-    'postcss-nested': {},
-    'postcss-simple-vars': {},
-  }
-})
+module.exports = () => {
+  return {
+    plugins: {
+      'postcss-preset-env': {
+        stage: 3,
+        autoprefixer: {
+          flexbox: true,
+          grid: false,
+        },
+        overrideBrowserslist: ['> 5%', 'IE 11'],
+      },
+    },
+  };
+};
